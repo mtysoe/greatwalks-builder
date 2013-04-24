@@ -1,0 +1,52 @@
+<div class="text-column1 {{walk-id}}">
+    <h1>Tongariro Northern Circuit</h1>
+    <p class="info">
+      <span class="days">3-4 days</span>
+      <span class="duration">51.5 km</span>
+      <a href="{{map_filename}}" class="icon-map">Map</a>
+    </p>
+    <p class="intro">
+      Winding its way over Mt Tongariro and around Mt Ngauruhoe, <a href="#" class="icon icon-volcano"
+      data-content="Tongariro National Park is centered around three active volcanoes: Ruapehu (2797 metres), the highest point in the North Island, Tongariro (1967 metres) and Ngauruhoe (2287 metres) These volcanoes are all less than 500,000 years old and still active today."></a> this walk passes
+      through unique and stunning landforms including active volcanic craters, brilliant
+      blue lakes, <a href="#" class="icon icon-lake2"
+      data-content="The Emerald Lakes, a trio of turquoise-coloured lakes, are situated near the summit of Mt Tongariro and a real highlight of this Great Walk. The lakes fill explosion craters and get their brilliant colours from dissolved volcanic minerals."></a> steaming geothermal areas, and glacial valleys. From alpine herb fields
+      to forests, from tranquil lakes to desert-like plateau, this walk is a place of
+      extremes and surprises.
+    </p>
+    <div class="youtube" data-youtube-id="{{youtube-id}}"></div>
+    <div id="carousel" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        {{#carousel_thumbnails}}
+          <div class="item {{active}}">
+            <ul>
+              {{#thumbnails}}<li><a href="#carousel-{{id}}" role="button" data-toggle="modal" style="background-image: url('{{{path}}}');"><img src="img/magnify-glass.png"></a></li>{{/thumbnails}}
+            </ul>
+          </div>
+        {{/carousel_thumbnails}}
+      </div>
+      <a class="carousel-control left" href="#carousel" data-slide="prev">&#8249;</a>
+      <a class="carousel-control right" href="#carousel" data-slide="next">&#8250;</a>
+    </div>
+</div>
+<div class="below-fold">
+    <div class="text-column1 {{walk-id}}">
+        <!--#include file="don't-miss.mustache" -->     
+        <!--#include file="offers.mustache" -->     
+        <!--#include file="before-you-go.mustache" -->     
+        <!--#include file="getting-there.mustache" -->     
+        <!--#include file="where-to-stay.mustache" -->     
+        <!--#include file="on-the-track.mustache" -->     
+    </div>
+</div>
+<div id="elevation-profile" style="width:98%;" class="modal hide fade horizscroll" tabindex="-1" role="dialog">
+  <img src="{{{elevation-profile-image}}}" style="width:{{elevation-profile-image-width}}px; height:{{elevation-profile-image-height}}px; max-width:none; max-height:none">
+</div>
+
+
+{{#carousel}}
+<div id="carousel-{{id}}" style="width:98%;" class="modal hide fade" tabindex="-1" role="dialog">
+  <img src="{{path}}" style="width:100%">
+</div>
+{{/carousel}}

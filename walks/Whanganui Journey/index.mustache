@@ -1,0 +1,49 @@
+<div class="text-column1 {{walk-id}}">
+    <h1>
+      Whanganui Journey
+    </h1>
+    <p class="info">
+      <span class="days">3-5 days</span>
+      <span class="duration">145 km</span>
+      <a href="{{map_filename}}" class="icon-map">Map</a>
+    </p>
+    <p class="intro">
+      The Whanganui River winds its way from the mountains to the Tasman Sea
+      through countless hills and valleys. This journey takes you on a multi-day canoe or
+      kayak trip to experience its most remote scenic beauty, history and cultural
+      significance. <a href="#" class="icon icon-culture" data-content="Learn about the intimate connection the Whanganui iwi share with their awa (river) and imagine the times when traditional waka (canoe) and steam-driven riverboats plied the river.<br>Early M&#257;ori cultivated the sheltered terraces and built elaborate eel weirs along river channels where eels and lamprey were known to converge. Every bend of the river had kaitiaki (guardian) which controlled the mauri (life force) of that place. The mana (prestige) of a settlement depended upon the way in which food supplies and living areas were looked after for the benefit of the tribe."></a>
+    </p>
+    <div class="youtube" data-youtube-id="{{youtube-id}}"></div>
+    <div id="carousel" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        {{#carousel_thumbnails}}
+          <div class="item {{active}}">
+            <ul>
+              {{#thumbnails}}<li><a href="#carousel-{{id}}" role="button" data-toggle="modal" style="background-image: url('{{{path}}}');"><img src="img/magnify-glass.png"></a></li>{{/thumbnails}}
+            </ul>
+          </div>
+        {{/carousel_thumbnails}}
+      </div>
+      <a class="carousel-control left" href="#carousel" data-slide="prev">&#8249;</a>
+      <a class="carousel-control right" href="#carousel" data-slide="next">&#8250;</a>
+    </div>
+</div>
+<div class="below-fold">
+    <div class="text-column1 {{walk-id}}">
+        <!--#include file="don't-miss.mustache" -->
+        <!--#include file="offers.mustache" -->
+        <!--#include file="before-you-go.mustache" -->
+        <!--#include file="getting-there.mustache" -->
+        <!--#include file="where-to-stay.mustache" -->
+        <!--#include file="on-the-track.mustache" -->
+    </div>
+</div>
+
+<!-- No elevation profile -->
+
+{{#carousel}}
+<div id="carousel-{{id}}" style="width:98%;" class="modal hide fade" tabindex="-1" role="dialog">
+  <img src="{{path}}" style="width:100%">
+</div>
+{{/carousel}}

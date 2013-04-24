@@ -1,0 +1,331 @@
+.radial-gradient(@to-color, @from-color) {
+    background: @to-color; /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover,  @from-color 0%, @to-color 100%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,@from-color), color-stop(100%,@to-color)); /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover,  @from-color 0%,@to-color 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover,  @from-color 0%,@to-color 100%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  @from-color 0%,@to-color 100%); /* IE10+ */
+    background: radial-gradient(ellipse at center,  @from-color 0%,@to-color 100%); /* W3C */
+}
+
+
+
+body.maps {
+    .radial-gradient(#eaf6fc, #79ccec);
+    min-height:100%;
+    height:100%;
+
+    #wrapper {
+        .radial-gradient(#eaf6fc, #79ccec);
+       
+        height:100%;
+        min-height:100%;
+
+        #new-zealand-map {
+            position:relative;
+            padding:0px;
+            margin:0px auto;
+
+            
+            img {
+                margin:0px;
+                padding:0px;   
+                width:auto;
+                height:auto;
+            }
+            
+            .map-location {
+                position:absolute;
+                padding:0px;
+                margin:0px;
+                line-height:normal;
+                text-align:center;
+                color:black;
+            }
+
+             h2.map-location {
+                font-weight:bold;
+                text-transform:uppercase;
+
+                a.secret-link  {
+                    color:black;
+
+                    &:hover {
+                        text-decoration:none;
+                    }
+                }
+            }
+
+            a.map-location {
+                font-weight:bold;
+                text-decoration:none;
+
+                &:hover {
+                    text-decoration:none;                
+                }
+            }
+
+
+            &.size800,
+            &.size700,
+            &.size600 {
+                h2.map-location {
+                    font-size:13px;
+                    line-height:15px;
+                }
+
+                a.map-location {
+                    font-size:18px;
+                }
+
+                .map-icon-bottom {
+                    padding-bottom:50px;
+                }
+
+                .map-icon-bottom2 {
+                    padding-bottom:45px;
+                }
+
+                .map-icon-left {
+                    padding-left: 50px;
+                }
+
+                .map-icon-right {
+                    padding-right: 50px;
+                }
+
+                .map-icon-height {
+                    min-height:50px;
+                    line-height:50px;
+                }
+
+                .map-icon-height2 {
+                    min-height:40px;
+                    line-height:70px;
+                }
+
+                .map-icon-height3 {
+                    min-height:50px;
+                    line-height:normal;
+                }
+            }
+
+            &.size500 {
+                h2.map-location {
+                    font-size:10px;
+                    line-height:16px;
+                    font-weight:normal;
+                }
+
+                a.map-location {
+                    font-size:16px;
+                }
+
+                .map-icon-bottom {
+                    padding-bottom:30px;
+                }
+
+                .map-icon-bottom2 {
+                    padding-bottom:27px;
+                }
+
+                .map-icon-left {
+                    padding-left: 40px;
+                }
+
+                .map-icon-right {
+                    padding-right: 40px;
+                }
+
+                .map-icon-height {
+                    min-height:20px;
+                    line-height:25px;
+                }
+
+                .map-icon-height2 {
+                    min-height:20px;
+                    line-height:30px;
+                }
+
+                .map-icon-height3 {
+                    min-height:15px;
+                    line-height:35px;
+                }
+            }
+
+            &.size400 {
+                h2.map-location {
+                    font-size:9px;
+                    line-height:12px;
+                    font-weight:normal;
+                }
+
+                a.map-location {
+                    font-size:13px;
+                }
+
+                .map-icon-bottom {
+                    padding-bottom:30px;
+                }
+
+                .map-icon-bottom2 {
+                    padding-bottom:27px;
+                }
+
+                .map-icon-left {
+                    padding-left: 35px;
+                }
+
+                .map-icon-right {
+                    padding-right: 35px;
+                }
+
+                .map-icon-height {
+                    min-height:25px;
+                    line-height:25px;
+                }
+
+                .map-icon-height2 {
+                    min-height:20px;
+                    line-height:40px;
+                }
+
+                .map-icon-height3 {
+                    min-height:25px;
+                    line-height:normal;
+                }
+            }
+
+            &.size300 {
+                h2.map-location {
+                    font-size:8px;
+                    line-height:10px;
+                    font-weight:normal;
+                }
+
+                a.map-location {
+                    font-size:11px;
+                }
+
+                .map-icon-bottom {
+                    padding-bottom:20px;
+                }
+
+                .map-icon-bottom2 {
+                    padding-bottom:20px;
+                }
+
+                .map-icon-left {
+                    padding-left: 25px;
+                    line-height:10px;
+                }
+
+                .map-icon-right {
+                    padding-right: 20px;
+                }
+
+                .map-icon-height {
+                    min-height:25px;
+                    line-height:25px;
+                }
+
+                .map-icon-height2 {
+                    min-height:20px;
+                    line-height:40px;
+                }
+
+                .map-icon-height3 {
+                    min-height:25px;
+                    line-height:normal;
+                }
+            }
+
+            &.size200 {
+                h2.map-location {
+                    font-size:7px;
+                    line-height:6px;
+                    font-weight:normal;
+                }
+
+                a.map-location {
+                    font-size:7px;
+                }
+
+                .map-icon-bottom {
+                    padding-bottom:18px;
+                }
+
+                .map-icon-bottom2 {
+                    padding-bottom:15px;
+                }
+
+                .map-icon-left {
+                    padding-left: 18px;
+                }
+
+                .map-icon-right {
+                    padding-right:18px;
+                }
+
+                .map-icon-height {
+                    min-height:12px;
+                    line-height:12px;
+                }
+
+                .map-icon-height2 {
+                    min-height:20px;
+                    line-height:25px;
+                }
+
+                .map-icon-height3 {
+                    min-height:12px;
+                    line-height:normal;
+                }
+            }
+
+            &.size100 {
+                h2.map-location {
+                    font-size:5px;
+                    line-height:6px;
+                    font-weight:normal;
+                }
+
+                a.map-location {
+                    font-size:6px;
+                }
+
+                .map-icon-bottom {
+                    padding-bottom:7px;
+                }
+
+                .map-icon-bottom2 {
+                    padding-bottom:7px;
+                }
+
+                .map-icon-left {
+                    padding-left: 10px;
+                }
+
+                .map-icon-right {
+                    padding-right:10px;
+                }
+
+                .map-icon-height {
+                    min-height:12px;
+                    line-height:12px;
+                }
+
+                .map-icon-height2 {
+                    min-height:20px;
+                    line-height:25px;
+                }
+
+                .map-icon-height3 {
+                    min-height:12px;
+                    line-height:normal;
+                }
+            }
+        }
+    }
+}
+

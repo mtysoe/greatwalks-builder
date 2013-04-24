@@ -1,0 +1,865 @@
+.horizontal-gradient(@left, @right) {
+    background: @left; /* Old browsers */
+    background: -webkit-linear-gradient(left, @left 0%,@right 100%); /* Chrome10+,Safari5.1+ */
+    background: linear-gradient(to right,  @left 0%,@right 100%); /* W3C */
+}
+
+.vertical-gradient(@top, @bottom) {
+    background: @top; /* Old browsers */
+    background: -webkit-linear-gradient(top, @top 0%,@bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: linear-gradient(to bottom,  @top 0%,@bottom 100%); /* W3C */
+}
+
+
+.drop-shadow(@radius:10px, @color:#8d8874) {
+  -moz-box-shadow:    3px 3px @radius @color;
+  -webkit-box-shadow: 3px 3px @radius @color;
+  box-shadow:         3px 3px @radius @color;
+}
+
+body.walk {
+    background:white;
+
+     .text-column1 {
+        font-famiy:serif;
+        line-height:120%;
+        background-repeat: no-repeat;
+        background-size: 63px 91px;
+        padding-bottom:0px;
+        
+        h1 {
+            padding-top:10px;
+            padding-left:80px;
+            text-transform:uppercase;
+            font-weight:bold;
+            font-size:36px;
+            line-height:100%;
+        }
+
+        &.lake-waikaremoana {
+            background-image: url("../img/walks/lake-waikaremoana/national.gif");
+        }
+
+        &.wellington {
+            background-image: url("../img/walks/wellington/national.gif");
+        }
+
+        &.tongariro-northern-circuit {
+            background-image: url("../img/walks/tongariro-northern-circuit/national.gif");
+
+            h1 {
+                font-size: 27px;
+            }
+        }
+
+        &.whanganui-journey {
+            background-image: url("../img/walks/whanganui-journey/national.gif");
+        }
+
+        &.abel-tasman-coast-track {
+            background-image: url("../img/walks/abel-tasman-coast-track/national.gif");
+
+            h1 {
+                font-size: 27px;
+            }
+        }
+
+        &.heaphy-track {
+            background-image: url("../img/walks/heaphy-track/national.gif");
+        }
+
+        &.routeburn-track {
+            background-image: url("../img/walks/routeburn-track/national.gif");
+        }
+
+        &.milford-track {
+            background-image: url("../img/walks/milford-track/national.gif");
+        }
+
+        &.kepler-track {
+            background-image: url("../img/walks/kepler-track/national.gif");
+        }
+
+        &.rakiura-track---stewart-island {
+            background-image: url("../img/walks/rakiura-track---stewart-island/national.gif");
+
+            h1 {
+                font-size: 26px;
+            }
+        }
+
+        .info {
+            padding-left:80px;
+            margin-top:-5px;
+            text-transform:uppercase;
+            font-weight:bold;
+            margin-bottom: 1em;
+
+            span {
+                display: inline-block;
+
+                &.duration {
+                    margin-left:50px;
+                }
+            }
+        }
+
+        .intro {
+            clear:both;
+            line-height:300%;
+            font-size:small;
+        }
+
+        .youtube {
+            text-align:center;
+        }
+        
+        #carousel {
+            padding-right: 20px;
+            padding-left: 20px;
+
+            .carousel-inner {
+                height:220px;
+                padding:0px;
+
+                .item {
+                    height:220px;
+
+                    ul {
+                        list-style:none;
+                        margin:0px;
+                        padding:10px;
+                        
+                        li {
+                            float:left;
+                            width:31%;
+                            margin-right:2%;
+                            margin-bottom:10px;
+
+                            a {
+                                position: relative;
+                                display:block;
+                                height:190px;
+                                background-size: cover;
+                                background-position: center 0px;
+                                border: solid 8px white;
+                                border-radius:5px;
+                                -moz-box-shadow:    0px 0px 10px #8D8874;
+                                -webkit-box-shadow: 0px 0px 10px #8D8874;
+                                box-shadow:         0px 0px 10px #8D8874;
+
+                                img {
+                                    position: absolute;
+                                    bottom:0px;
+                                    right:0px;
+                                    width: 30px;
+                                    height: 30px;
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+
+            .carousel-control {
+                color: #666666;
+                background: none;
+                border: none;
+                top: 50%;
+
+                &.left {
+                    left:0px;
+                    margin-left:-10px;
+                }
+
+                &.right {
+                    right:1%;
+                    margin-right:0px;
+                }
+            }
+        }
+
+        .walk-detail-header {
+            
+            padding: 0.4em 0.5em;
+            margin-bottom: 10px;
+            font-size:25px;
+            .drop-shadow();
+
+            a {
+                text-decoration:none;
+            }
+
+            a span {
+                display:block;
+                color:white;
+                background-image: url("../img/walk-icons.png");
+                background-position: right -90px;
+                background-repeat: no-repeat;
+                background-size: 40px 200px;
+            }
+
+            &.open a span {
+                display:block;
+                background-image: url("../img/walk-icons.png");
+                background-repeat: no-repeat;
+                background-position: right -41px;
+                background-size: 40px 200px;
+            }
+
+            &.dont-miss {
+                background: #ec9103;
+                padding-left:40px;
+                .horizontal-gradient(#a96a00, #f0b14a);
+            }
+
+            &.dont-miss:before {
+                content: "";
+                position:absolute;
+                width: 0;
+                height: 0;
+                margin-top: -0.7em;
+                margin-left:-50px;
+                border-top: 1.5em solid transparent;
+                border-left: 1.5em solid #e5dfbd;
+                border-bottom: 1.5em solid transparent;
+            }
+
+            &.offers {
+                background: #44762f;
+                .horizontal-gradient(#44762f, #8abe74);
+            }
+
+            &.offers > span {
+                display:block;
+                padding-left:50px;
+                background-image: url("../img/walk-icons.png");
+                background-repeat: no-repeat;
+                background-position: left 5px;
+                background-size: 40px 200px;
+            }
+
+
+            &.before-you-go {
+                background: #999966;
+                .horizontal-gradient(#706d4c, #b4b48e);
+            }
+
+            &.getting-there {
+                background: #ccb200;
+                .horizontal-gradient(#938000, #dac746);
+            }
+
+            &.where-to-stay {
+                background: #3b93c5;
+                .horizontal-gradient(#2a6a8e, #71b1d5);
+            }
+
+            &.on-the-track {
+                background: #026a5a;
+                .horizontal-gradient(#004c3f, #479387);
+            }
+
+        }
+
+        .walk-detail {
+            background:white;
+            margin-top: -10px;
+            max-height:0px;
+            overflow:hidden;
+            padding: 0em 1em;
+            transition: 0.2s ease-in;
+            -webkit-transition: 0.2s ease-in;
+
+            &.expanded {
+                padding: 0.5em 1em;
+                max-height: 3000px;
+            }
+
+            &.dont-miss {
+                background: transparent;
+                position:relative;
+                width: 100%;
+                padding: 0px;
+
+                p {
+                    margin:0px;
+                    padding:0px;
+
+                    img {
+                        width:100%;
+
+                        &.shadow {
+                            position:absolute;
+                            left:0px;
+                            top:0px;
+                            opacity:0;
+                            transition: .2s ease-in;
+                            -webkit-transition: .2s ease-in;
+
+                            &.shadow-visible {
+                                opacity:1;
+                                z-index:2;
+                            }
+                        }
+                    }
+
+                    a {
+                        display:block;
+                        position:absolute;
+
+                        img {
+                            image-rendering:-webkit-optimize-contrast;
+                            max-width:100%;
+                            height:auto;
+
+                        }
+                    }
+                }
+            }
+
+            &.offers {
+                ul {
+                    list-style:none;
+                    margin:0px;
+                    padding:0px;
+
+                    li {
+                        padding:0px;
+                        margin:0px 0px 10px 0px;
+
+                        a {
+                            display:block;
+                            text-align:center;
+
+                            img {
+                                max-width:581px;
+                                width:100%;
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            &.offers,
+            &.before-you-go,
+            &.getting-there,
+            &.where-to-stay,
+            &.on-the-track {
+                .drop-shadow();    
+            }
+        }
+
+
+
+        .icon-map,
+        .icon-maps-blue {
+            display:inline-block;
+            background-position: 0px 0px;            
+            background-image: url("../img/icon-content-maps_blue.png");
+            background-size: 52px 50px;
+            width:52px;
+            height:50px;
+            float:right;
+            margin-right:50px;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .icon-maps-gold {
+            display:inline-block;
+            background-position: 0px 0px;            
+            background-image: url("../img/icon-content-maps_gold.png");
+            background-size: 52px 50px;
+            width:52px;
+            height:50px;
+            float:right;
+            margin-right:50px;
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .icon {
+            display:inline-block;
+            background-position: 0px 0px;            
+            border: solid 10px red; /* Used to identify unstyled icons */
+            vertical-align:top;
+            
+            &.icon-lake,
+            &.icon-lake2,
+            &.icon-lakes {
+                background-image: url("../img/icon-content-lakes.png");
+                background-size: 58px 40px;
+                width:58px;
+                height:40px;
+                border:none;
+            }
+
+            &.icon-canoe {
+                background-image: url("../img/icon-content-canoe.png");
+                background-size: 58px 40px;
+                width:58px;
+                height:40px;
+                border:none;
+            }
+
+            &.icon-specials {
+                background-image: url("../img/icon-content-specials.png");
+                background-size: 58px 40px;
+                width:58px;
+                height:40px;
+                border:none;
+            }
+
+            &.icon-calendar {
+                background-image: url("../img/icon-content-calendar.png");
+                background-size: 58px 40px;
+                width:58px;
+                height:40px;
+                border:none;
+            }
+
+            &.icon-culture {
+                background-image: url("../img/icon-content-culture.png");
+                background-size: 58px 40px;
+                width:58px;
+                height:40px;
+                border:none;
+            }
+
+            &.icon-forest,
+            &.icon-plants-trees {
+                background-image: url("../img/icon-content-plants_trees.png");
+                background-size: 58px 40px;
+                width:58px;
+                height:40px;
+                border:none;
+            }
+
+            &.icon-volcano {
+                background-image: url("../img/icon-content-volcano.png");
+                background-size: 58px 40px;
+                width:58px;
+                height:40px;
+                border:none;
+            }
+
+            &.icon-kiwi {
+                background-image: url("../img/icon-content-kiwi.png");
+                background-size: 58px 40px;
+                width:58px;
+                height:40px;
+                border:none;
+            }
+
+            &.icon-river {
+                background-image: url("../img/icon-content-river.png");
+                background-size: 58px 40px;
+                width:58px;
+                height:40px;
+                border:none;
+            }
+        }
+
+
+        &.abel-tasman-coast-track {
+            div.dont-miss {
+                .camping {
+                    left:5%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .cleopatraspool {
+                    right:8%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .tongamarine-reserve {
+                    left:10%;
+                    top:36%;
+                    width:80%;
+                }
+
+                .awesomeviews {
+                    left:5%;
+                    bottom: 2%;
+                    width:50%;
+                }
+
+                .swimming {
+                    right:5px;
+                    bottom:3.2%;
+                    width:50%;
+                }
+            }
+        }
+
+        &.lake-waikaremoana {
+            div.dont-miss {
+                .counterclockwise {
+                    left:5%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .falls {
+                    right:8%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .awesomeviews {
+                    right:10%;
+                    top:38%;
+                    width:50%;
+                }
+
+                .notebook {
+                    left:8%;
+                    bottom: 2%;
+                    width:45%;
+                }
+
+                .swimming {
+                    right:5px;
+                    bottom:3.5%;
+                    width:45%;
+                }
+            }
+        }
+
+        &.tongariro-northern-circuit {
+            div.dont-miss {
+                .hobbits {
+                    left:5%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .culture {
+                    right:8%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .lakes {
+                    left:8%;
+                    top:35%;
+                    width:45%;
+                }
+
+                .volcanoes {
+                    left:8%;
+                    bottom: 3%;
+                    width:45%;
+                }
+
+                .taranakifalls {
+                    right:6%;
+                    bottom:4%;
+                    width:45%;
+                }
+            }
+        }
+
+        &.whanganui-journey {
+            div.dont-miss {
+                .kiwi {
+                    left:5%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .tikidude {
+                    right:8%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .scenic-river {
+                    left:8%;
+                    top:30%;
+                    width:40%;
+                }
+
+                .culture {
+                    right:8%;
+                    top: 43%;
+                    width:40%;
+                }
+
+                .bridge {
+                    left:8%;
+                    bottom:4%;
+                    width:80%;
+                }
+
+            }
+        }
+
+        &.heaphy-track {
+            div.dont-miss {
+                .birds {
+                    left:5%;
+                    top: 5%;
+                    width:35%;
+                }
+
+                .flora {
+                    right:8%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .heaphyhut {
+                    left:8%;
+                    top:35%;
+                    width:70%;
+                }
+
+                .mountainbiking {
+                    left:8%;
+                    bottom: 2%;
+                    width:45%;
+                }
+
+                .snails {
+                    right:3%;
+                    bottom:6%;
+                    width:45%;
+                }
+            }
+        }
+
+        &.kepler-track {
+            div.dont-miss {
+                .findkiwi {
+                    left:5%;
+                    top: 5%;
+                    width:35%;
+                }
+
+                .swingbridge {
+                    right:8%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .caves {
+                    left:8%;
+                    top:34%;
+                    width:70%;
+                }
+
+                .awesome-views {
+                    left:8%;
+                    bottom: 3%;
+                    width:45%;
+                }
+
+                .burnfalls {
+                    right:3%;
+                    bottom:6%;
+                    width:45%;
+                }
+            }
+        }
+
+        &.milford-track {
+            div.dont-miss {
+                .earlyfootsteps {
+                    left:5%;
+                    top: 4%;
+                    width:35%;
+                }
+
+                .raincoat {
+                    right:8%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .falls {
+                    left:10%;
+                    top:34%;
+                    width:60%;
+                }
+
+                .duck {
+                    left:8%;
+                    bottom: 3%;
+                    width:40%;
+                }
+
+                .suspensionbridge {
+                    right:4%;
+                    bottom:6%;
+                    width:45%;
+                }
+            }
+        }
+
+        &.routeburn-track {
+            div.dont-miss {
+                .earlysteps {
+                    left:5%;
+                    top: 4%;
+                    width:35%;
+                }
+
+                .mohua {
+                    right:8%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .alpine-wetlands {
+                    left:10%;
+                    top:37%;
+                    width:60%;
+                }
+
+                .awesome-views {
+                    left:8%;
+                    bottom: 3%;
+                    width:40%;
+                }
+
+                .blacksmith {
+                    right:4%;
+                    bottom:6%;
+                    width:45%;
+                }
+
+            }
+        }
+
+        &.rakiura-track---stewart-island {
+            div.dont-miss {
+                .birds {
+                    left:5%;
+                    top: 4%;
+                    width:35%;
+                }
+
+                .boatride {
+                    right:8%;
+                    top: 5%;
+                    width:45%;
+                }
+
+                .cliff-walfs {
+                    left:10%;
+                    top:37%;
+                    width:60%;
+                }
+
+                .island-sanc {
+                    left:9%;
+                    bottom:4%;
+                    width:40%;
+                }
+
+                .cultural-points {
+                    right:4%;
+                    bottom:6%;
+                    width:45%;
+                }
+
+            }
+
+        }
+    }
+
+     .below-fold {
+        background: #e5dfbd;
+        padding-bottom: 50px;
+
+        .text-column1 {
+            margin-top:20px;
+            padding-top:20px;
+
+
+            &.lake-waikaremoana,
+            &.wellington,
+            &.tongariro-northern-circuit,
+            &.whanganui-journey,
+            &.abel-tasman-coast-track,
+            &.heaphy-track,
+            &.routeburn-track,
+            &.milford-track,
+            &.kepler-track,
+            &.rakiura-track---stewart-island {
+                background-image:none;
+            }
+        }
+    }
+
+    .popover {
+        background:white;
+
+        .popover-inner {
+            border-radius:6px;
+            .vertical-gradient(#80c1dd, #e3eef4);
+        }
+    }
+
+  
+}
+
+
+
+
+@media (max-width: 500px) {
+    body.walk .text-column1 {
+        h1 {
+            font-size: 20px;
+
+            &.rakiura-track---stewart-island h1,
+            &.tongariro-northern-circuit h1,
+            &.abel-tasman-coast-track h1 {
+                font-size: 18px;
+            }
+        }
+
+        .info {
+            font-size: 14px;
+
+            span.duration {
+                margin-left:10px;
+            }
+        }
+    }
+}
+
+
+
+@media (max-width: 400px) {
+    body.walk .text-column1 {
+        h1 {
+            font-size: 13px;
+
+            &.rakiura-track---stewart-island h1,
+            &.tongariro-northern-circuit h1,
+            &.abel-tasman-coast-track h1 {
+                font-size: 12px;
+            }
+        }
+
+        .info {
+            font-size: 14px;
+
+            span.duration {
+                margin-left:10px;
+            }
+        }
+    }
+}
+
+

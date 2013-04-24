@@ -1,0 +1,253 @@
+.horizontal-gradient(@left, @right) {
+    background: @left; /* Old browsers */
+    background: -webkit-linear-gradient(left, @left 0%,@right 100%); /* Chrome10+,Safari5.1+ */
+    background: linear-gradient(to right,  @left 0%,@right 100%); /* W3C */
+}
+
+.drop-shadow(@radius:10px, @color:#8d8874) {
+  -moz-box-shadow:    3px 3px @radius @color;
+  -webkit-box-shadow: 3px 3px @radius @color;
+  box-shadow:         3px 3px @radius @color;
+}
+
+body.find-an-adventure {
+    background: #e5dfbd;
+    color: #131009;
+
+    h1 {
+        text-align:center;
+        text-transform:uppercase;
+        color: #ab9120;
+    }
+
+    h2 {
+        text-align:center;
+        color: #010000;
+        margin-top:1em;
+        font-size:large;
+        font-weight:bold;
+    }
+
+    .resetFinder {
+        margin-top:0.5em;
+        display:inline-block;
+        text-align:center;
+    }
+
+    #warning-1-2-days {
+        display:none;
+    }
+
+    ol.chooser {
+        margin: 0px;
+        padding:0px;
+        list-style:none;
+
+        li {
+            margin:0px 0px 10px 0px;
+            padding:0px;
+            position:relative;
+            
+            span {
+                position:absolute;
+                left:-1px;
+                top: .8em;
+                z-index:2;
+                color: #9e988a;
+                font-weight:bold;
+            }
+
+            &:before {
+                content: "";
+                position:absolute;
+                width: 0;
+                height: 0;
+                margin-top: -0.2em;
+                margin-left:-5px;
+                border-top: 1.8em solid transparent;
+                border-left: 1.8em solid #e5dfbd;
+                border-bottom: 1.8em solid transparent;
+            }
+
+            a {
+                display:block;
+                padding:15px 10px 15px 35px;
+                color:white;
+                .drop-shadow();
+                background-image: url("../img/find-an-adventure-icons.png");
+                background-size: 60px 850px;
+                background-repeat: no-repeat;
+                text-decoration:none;
+
+                &:hover {
+                    text-decoration:none;
+                }
+            }
+        }
+
+        li.where {
+            .horizontal-gradient(#256f92, #73b2d3);
+
+            a {
+                padding-left:80px;
+                background-position: 30px 5px;
+            }
+        }
+
+        li.see {
+            .horizontal-gradient(#747249, #b8b592);
+
+            a {
+                background-position: right -97px;
+                padding-right:60px;
+            }
+        }
+
+        li.time {
+            .horizontal-gradient(#004e41, #4c918c);
+
+            a {
+                padding-left:80px;
+                background-position: 30px -194px;
+            }
+        }
+
+    }
+
+    #where.modal {
+        width:15em;
+        margin-left:-7.5em;
+    }
+
+    #see.modal {
+        width:15em;
+        margin-left:-7.5em;
+
+        ol li {
+            background-image: url("../img/checkbox-sprite.png");
+            background-position: 20px 15px;
+            background-size: 19px 118px;
+
+            &.active {
+                background-position: 20px -85px;
+            }
+        }
+    }
+
+    #time.modal {
+        width:10em;
+        margin-left:-5em;
+    }
+
+    .modal {
+        background: #ebe8d7;
+        color: #131009;
+        padding: 5px 0px;
+        font-family:CopseWoff, CopseTTF, serif;
+        
+
+        ol {
+            margin:0px;
+            padding:0px;
+            list-style:none;
+
+            li {
+                border-top: solid 2px #bebbaa;
+                background-image: url("../img/find-an-adventure-icons.png");
+                background-size: 60px 850px;
+                background-repeat: no-repeat;
+                background-position: 20px -284px;
+
+                &.active {
+                    background-position: 20px -385px;
+                }
+
+                &#where-northisland {
+                    a {
+                        background-image: url("../img/find-an-adventure-icons.png");
+                        background-size: 60px 850px;
+                        background-repeat: no-repeat;
+                        background-position: 50px -500px;
+                        padding-left:100px;
+                    }
+                }
+
+                &#where-southisland {
+                    a {
+                        background-image: url("../img/find-an-adventure-icons.png");
+                        background-size: 60px 850px;
+                        background-repeat: no-repeat;
+                        background-position: 50px -595px;
+                        padding-left:100px;
+                    }
+                }
+
+                &#where-surpriseme {
+                    a {
+                        background-image: url("../img/find-an-adventure-icons.png");
+                        background-size: 60px 850px;
+                        background-repeat: no-repeat;
+                        background-position: 50px -690px;
+                        padding-left:100px;
+                    }
+                }
+
+                a {
+                    display:block;
+                    padding: 15px 15px 15px 50px;
+                    color:black;
+                    font-weight:bold;
+                    text-decoration:none;
+
+                    &:hover {
+                       text-decoration:none;
+                    }
+                }
+            }
+
+            li:first-child {
+                border-top: none;
+            }
+        }
+    }
+
+    #results {
+        display:none;
+
+        ol {
+            list-style:none;
+            margin:0px;
+            padding:0px;
+
+            li {
+               margin: 0px 0px 6px 0px; 
+               padding: 0px;
+               line-height:normal;
+               background: #61a443;
+               border-radius: 5px;
+
+               a {
+                    display:block;
+                    background: url("../img/find-an-adventure-icons.png");
+                    background-size: 60px 750px;
+                    background-repeat: no-repeat;
+                    background-position: right -683px;
+                    color: #fff;
+                    padding: 1em 1.5em;
+                    text-decoration:none;
+                    text-transform:uppercase;
+
+                    &:hover {
+                        background-color: #78b15f;
+                        border-radius: 5px;
+                    }
+               }
+            }
+        }
+
+    }
+
+    #no-results {
+        display:none;
+    }
+}

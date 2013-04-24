@@ -1,0 +1,42 @@
+<div class="text-column1">
+ 
+      <h1>Contact us</h1>
+		<h2>
+		Call us
+		</h2>
+      <p>
+        <a href="tel:0800694732" class="btn phone"></a>0800 NZ GREATWALKS<br>
+         Calling from outside New Zealand?<br />
+         <a href="tel:+6493033109">+64 9 303 3109</a>
+      </p>
+		<h2>
+		Email us
+		</h2>
+      <p>
+      <a href="mailto:greatwalks@doc.govt.nz" class="btn email">greatwalks@doc.govt.nz</a><br />
+       Fix required on the track? <a href="mailto:greatwalks@doc.govt.nz?subject=Issue on Great Walks track- please fix" class="report_error">Tell us about it</a>.<br />
+       Feedback about this app? <a href="mailto:greatwalks@doc.govt.nz?subject=Great Walks app feedback">We'd love to hear from you</a>!
+      </p>
+   
+      <h2>Website</h2>
+      <p>Learn more about the Great Walks on the <a href="http://greatwalks.co.nz">Great Walks website</a>.</p>
+    
+      <h2>About the app</h2>
+      <p>This app was built by the Department of Conservation, Te Papa Atawhai.</p>
+        
+      <h2>Credits</h2>
+      <p>
+      Coding and project management by <a href="http://catalyst.net.nz">Catalyst IT</a>.<br />
+      Design by <a href="http://www.pikselin.com">Pikselin</a>.
+      </p>
+
+      <h2>Privacy</h2>
+      <p>
+      The Department of Conservation is committed to protecting the privacy and security of the users of the Great Walks app. You may browse and access information contained within this app without providing any personal information. Where you voluntarily provide personal information (e.g., through email feedback), we will only use that information to communicate with you. We will keep any such information secure and will not disclose it to any third parties.
+      </p>
+
+      <h2>Copyright</h2>
+      <p>
+      Unless otherwise indicated, the content on this website is Crown copyright. In accordance with NZGOAL principles, all DOC content (text, images, sounds and maps) within this application is licensed under the terms of CC-BY. Source code is available from github under a number of open source licenses.
+      </p>
+</div>

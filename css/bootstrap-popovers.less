@@ -1,0 +1,51 @@
+.vertical-gradient(@top, @bottom) {
+    background: @top; /* Old browsers */
+    background: -webkit-linear-gradient(top, @top 0%,@bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: linear-gradient(to bottom,  @top 0%,@bottom 100%); /* W3C */
+}
+
+.popover-modal {
+    padding: 10px;
+    .vertical-gradient(#80c1dd, #e3eef4);
+}
+
+.popover {
+    /* Looking for popovers on the walk info pages? See walk.less */
+
+    z-index:10000;
+
+    .popover-title {
+        display:none;
+    }
+
+    .popover-content {
+        
+        div,
+        p {
+            font-family:sans-serif;
+            font-weight:normal;
+            font-size:12px;
+        }
+
+        b.distance_away {
+            font-size:12px;
+            display:block;
+            text-transform:uppercase;
+
+            &.with-description {
+                margin-bottom:0.3em;
+            }
+        }
+
+
+        h3 {
+            margin:0px 0px 4px 0px;
+            padding:0px;
+            font-family:CopseWoff, CopseTTF, serif;
+            line-height:90%;
+            font-size:17px;
+        }
+    }
+
+}
+

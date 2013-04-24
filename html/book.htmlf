@@ -1,0 +1,60 @@
+<div class="text-column1">
+    <h1>
+      Book Now
+    </h1>
+    <p>
+      You have lots of options to book your Great Walk:
+    </p>
+    <h2>
+    Call us
+    </h2>
+    <p>
+        <a href="tel:0800694732" class="btn phone"></a>0800 NZ GREATWALKS<br>
+         Calling from outside New Zealand?<br>
+         <a href="tel:+6493033109">+64 9 303 3109</a>
+      </p>
+    <h2>
+    Email us
+    </h2>
+    <p>
+      <a href="mailto:greatwalks@doc.govt.nz" class="btn email">greatwalks@doc.govt.nz</a>
+    </p>
+    <h2>
+      Come see us
+    </h2>
+    <p>
+      <a href="visitor-centre.html">Find the nearest DOC Visitor Centre</a>.
+    </p>
+    <p>
+      While you&rsquo;re here, you can also pick up maps and other things for your
+      Great Walk.
+    </p>
+        <h2>
+      Book online
+    </h2>
+    
+    <p>
+      <a class="btn bookonline"
+      href=
+      "http://bookings.bookitsecure.com/pub/supplier.aspx?b=DEPART">Book
+      now</a>
+    </p>
+    
+    <p>
+      For more resources and info, visit the <a
+      href="http://www.doc.govt.nz/parks-and-recreation/tracks-and-walks/great-walks/">
+      Great Walks on the DOC website</a>.
+    </p>
+</div>
+
+<div class="navbar navbar-fixed-bottom">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <ul class="options">
+              <li><a href="maps.html" class="maps">Maps</a></li>
+              <li><a href="offers.html" class="offers">Offers</a></li>
+              <li><a href="book.html" class="booknow">Book Now</a></li>
+            </ul>
+        </div>
+   </div>
+</div>

@@ -1,0 +1,18 @@
+ <div class="text-column1">
+ 
+  <h1>Nearest Visitor Centre</h1>
+  
+  <!-- OBJECTID SITE    ADDRESS EMAIL   PHONE   OPENING HOURS   Longitude   Latitude    OFFICE_TYP  GreatWalk -->
+  <div id="visitor-centres-list">
+     {{#visitor_centres}}
+        <div class="visitor-centre-location" data-longitude="{{Longitude}}" data-latitude="{{Latitude}}">
+            <h3>{{SITE}}</h3>
+            <p>{{OPENING}}</p>
+            <p>{{ADDRESS}}</p>
+            <p><a href="mailto:{{EMAIL}}" class="btn email">{{EMAIL}}</a></p>
+            <p><a href="tel:{{PHONE_SANITISED}}" class="btn phone"></a>{{PHONE}}</p>
+          </div>
+     {{/visitor_centres}}
+  </div>
+
+ </div>

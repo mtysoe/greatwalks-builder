@@ -1,0 +1,47 @@
+<div class="text-column1 {{walk-id}}">
+    <h1>Rakiura Track - Stewart Island</h1>
+    <p class="info">
+      <span class="days">3 days</span>
+      <span class="duration">32 km</span>
+      <a href="{{map_filename}}" class="icon-map">Map</a>
+    </p>
+    <p class="intro">
+      Exchange the hustle and bustle of mainland life for the tranquillity of the
+      Rakiura Track on Stewart Island/Rakiura. Revel in the peacefulness with the bush,
+      birds and beach at your side.
+    </p>
+    <div class="youtube" data-youtube-id="{{youtube-id}}"></div>
+    <div id="carousel" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+        {{#carousel_thumbnails}}
+          <div class="item {{active}}">
+            <ul>
+              {{#thumbnails}}<li><a href="#carousel-{{id}}" role="button" data-toggle="modal" style="background-image: url('{{{path}}}');"><img src="img/magnify-glass.png"></a></li>{{/thumbnails}}
+            </ul>
+          </div>
+        {{/carousel_thumbnails}}
+      </div>
+      <a class="carousel-control left" href="#carousel" data-slide="prev">&#8249;</a>
+      <a class="carousel-control right" href="#carousel" data-slide="next">&#8250;</a>
+    </div>
+</div>
+<div class="below-fold">
+    <div class="text-column1 {{walk-id}}">
+        <!--#include file="don't-miss.mustache" -->     
+        <!--#include file="offers.mustache" -->     
+        <!--#include file="before-you-go.mustache" -->     
+        <!--#include file="getting-there.mustache" -->     
+        <!--#include file="where-to-stay.mustache" -->     
+        <!--#include file="on-the-track.mustache" -->     
+    </div>
+</div>
+<div id="elevation-profile" style="width:98%;" class="modal hide fade horizscroll" tabindex="-1" role="dialog">
+  <img src="{{{elevation-profile-image}}}" style="width:{{elevation-profile-image-width}}px; height:{{elevation-profile-image-height}}px; max-width:none; max-height:none">
+</div>
+
+{{#carousel}}
+<div id="carousel-{{id}}" style="width:98%;" class="modal hide fade" tabindex="-1" role="dialog">
+  <img src="{{path}}" style="width:100%">
+</div>
+{{/carousel}}

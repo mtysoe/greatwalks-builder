@@ -1,0 +1,110 @@
+
+
+.text-column1 {
+	width:70%;
+	max-width:654px;
+	min-width:300px;
+	margin: 0px auto 0px auto;
+	color:#333333;
+	padding-bottom:100px;
+	font-family:CopseWoff, CopseTTF, serif;
+
+
+	h1 {
+		color: #ac9420;
+		font-weight:normal;
+		font-family:CopseWoff, CopseTTF, serif;
+	}
+
+	h2 {
+		color: #6c3400;
+		font-weight:normal;
+		font-family:CopseWoff, CopseTTF, serif;
+	}
+
+	a.audio {
+		color:black;
+		background-image: url("../img/speaker-icon.png");
+		background-size: 16px 12px;
+		background-repeat:no-repeat;
+		background-position: right;
+		padding-right:20px;
+		display:inline-block;
+		whitespace:no-wrap;
+	}
+}
+
+.btn {
+	display:inline-block;
+	padding: 8px;
+	border-radius: 7px;
+	background-color: #15a5de;
+	background-image: none;
+	color: #ffffff;
+	text-transform:uppercase;
+	font-family:CopseWoff, CopseTTF, serif;
+	font-size:18px;
+	border:none;
+	border-color:none;
+	text-shadow:none;
+
+	&:hover {
+		text-decoration:none;
+		background-color: lighten(#15a5de, 10%);
+		color:white;
+	}
+
+	&.phone,
+	&.email,
+	&.vistorcenter,
+	&.bookonline {
+		background-image: url("../img/content-buttons.png");
+		background-size:16px 166px;
+		background-repeat: no-repeat;
+		padding:0px 0px 0px 30px;
+		width:0px;
+		height:30px;
+		overflow:hidden;
+		text-indent:100%;
+	}
+
+	&.phone {
+		background-position: 10px -143px;
+        margin-right: 10px;
+	}
+
+	&.email {
+		background-position: 8px 10px;
+		padding-left:33px;
+	}
+
+	&.vistorcenter {
+		background-position: 10px -40px;
+	}
+
+	&.bookonline {
+		background-position: 10px -90px;
+		padding-left:33px;
+	}
+}
+
+
+.btn + .btn,
+.btn + br + .btn {
+	margin-top:10px;
+}
+
+	
+
+@media (max-height: 400px) {
+	.text-column1 {
+		margin: 50px auto 0px auto;
+
+		.youtube iframe {
+			width:100%;
+		}
+	}
+
+
+}
+

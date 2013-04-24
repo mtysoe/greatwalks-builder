@@ -1,0 +1,442 @@
+body.map {
+
+    #wrapper {
+        background: url("../img/table.png");
+    }
+
+    #weta {
+        background: url(../img/weta_land.png);
+        width: 255px;
+        height: 393px;
+        background-size: 100%;
+        position:absolute;
+        top:100px;
+        left:0px;
+        text-indent: 100%; /* To hide inner text don't use text-indent:-10000px see: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ */
+        white-space: nowrap;
+        overflow: hidden;
+        
+        &:hover,
+        &:active,
+        &.active {
+            background-image: url(../img/weta_twitch.png);
+        }
+    }
+
+    #map {
+        border: solid 8px #201e1e;
+        overflow:hidden;
+    }
+
+    #map_id {
+        display:none;
+    }
+
+    #no-touch-zoom {
+        display:none;
+        position:fixed;
+        bottom:10px;
+        left:10px;
+        background: #eeeeee;
+        border: solid 1px #999999;
+
+        a {
+            background: #777777;
+            border: solid 1px #666666;
+            font-size:xx-large;
+            font-weight:bold;
+            display:block;
+            float:left;
+            text-decoration:none;
+            color:#fff;
+            text-align:center;
+            padding:0px 20px;
+        }
+    }
+
+    @youarehereradius: 35px;
+    @youarehereradiuscolour: rgba(0,0,255,0.3);
+    @youarehreeradiusbadreception: @youarehereradius * 2;
+
+    #youarehere {
+        display:none;
+        position:absolute;
+        width:1px
+        height:1px;
+        margin-left: -1px;
+        margin-top: -1px;
+        border-radius:100%;
+
+        &.goodAccuracy {
+            -webkit-box-shadow: 0 0 5px @youarehereradius @youarehereradiuscolour;
+        }
+
+        &.badAccuracy {
+            -webkit-box-shadow: 0 0 5px @youarehreeradiusbadreception @youarehereradiuscolour;
+        }
+
+        .dot {
+            position:absolute;
+            left:-18px;
+            top: -36px;
+            display:block;
+            width:36px;
+            height:36px;
+            background: url(../img/youarehere.png) no-repeat center center;
+            
+        }
+
+        .offmap {
+            display:none;
+            position:absolute;
+            left:0px;
+            top:0px;
+            width:10em;
+            font-size:x-small;
+            background: #666666;
+            color:#fff;
+            border: solid 1px #777777;    
+            border-radius:3px;
+            padding:3px 8px;
+        }
+    }
+
+    #no_gps {
+        display:none;
+        position:fixed;
+        left:10px;
+        top:70px;
+        background: #666666;
+        border: solid 2px #aaaaaa;
+        color: #fff;
+        border-radius:5px;
+        padding:3px 8px;
+    }
+
+    #user_actions {
+        display:block;
+        position:fixed;
+        top:150px;
+        left:50%;
+        margin-left:-150px;
+        width: 300px;
+        min-width:200px;
+        max-width:600px;
+        background: rgba(50,50,50,0.9);
+        border: solid 2px #aaaaaa;
+        color: #fff;
+        border-radius:5px;
+        padding:0px 0px 8px 0px;
+        text-align:center;
+
+        &.hidden {
+            display:none;
+        }
+
+        p {
+            margin:0px;
+            padding: 5px;
+        }
+
+        p.take-photo {
+            margin-bottom:0.2em;
+        }
+
+        p.refresh-geolocation {
+            border-top: solid 2px #aaaaaa; 
+            padding: 8px 0px 0px 0px;
+        }
+
+        .last-updated {
+            margin-top:0.2em;
+            text-align:center;
+            font-size:small;
+        }
+    }
+
+    #photo-preview {
+        display:none;
+        position:fixed;
+        top:5%;
+        left:5%;
+        height:90%;
+        width:90%;
+        z-index:10001;
+        -webkit-box-shadow: 0 0 5px 10px #000;
+    }
+
+    #camera_error {
+        background: #ffeeaa;
+        padding:10px;
+        color: #806600;
+        border: solid 2px #806600;
+        border-radius:10px;
+        text-align:center;
+        font-weight:bold;
+    }
+
+    #toggle-map-key {
+        position:fixed;
+        right:20px;
+        top:60px;
+        background: #333333 url("../img/legend-icon.png") scroll no-repeat center center;
+        background-size: 29px 29px; 
+        border: solid 2px #999999;
+        border-radius: 5px;
+        width:40px;
+        height:40px;
+        color:#fff;
+        text-align:center;
+        text-indent:100%;
+        overflow:hidden;
+    }
+
+    #map-key {
+        display:none;
+        border: none;
+        background: rgba(50,50,50,.9);
+        position:absolute;
+        top:150px;
+        left:50%;
+        margin-left:-165px;
+        width: 330px;
+        padding:10px;
+        color: #ffffff;
+        border-radius:10px;
+        text-transform:uppercase;
+        font-size:small;
+
+        ul {
+            list-style:none;
+            margin:0px 0px 15px 0px;
+            padding:5px 20px 0px 16px;
+
+            li {
+                text-align:left;
+                font-weight:bold;
+                margin-bottom: 5px;
+
+                span {
+                    background: url("../img/map-lines.png") no-repeat;
+                    float:right;
+                    display:block;
+                    width:160px;
+                    height:18px;
+                }
+
+                &.greatwalk span {
+                    background-position: 0px 8px;
+                }
+
+                &.sidetrack span {
+                    background-position: 0px -38px;
+                }
+
+                &.road span {
+                    background-position: 0px -85px;
+                }
+            }
+        }
+        
+
+        table {
+            margin: 0px 0px 5px 15px;
+        
+            td {
+                font-weight:bold;
+                vertical-align:middle;
+                text-align:left;
+                padding-bottom:5px;
+                
+                &:first-child {
+                    padding-right:20px;
+                }
+
+                img {
+                    width:30px;
+                    height:30px;
+                    margin-right:5px;
+                    vertical-align:middle;
+                }
+            }
+        }
+   }
+
+    .location-icon {
+        display: block;
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 40px;
+        height: 40px;
+        background-image: url(../img/missing-icon.png);
+        background-size:100%;
+        border: solid 3px red;
+    }
+
+    @media (min-width: 600px) {
+
+        .location-icon {
+            width:30px;
+            height:30px;
+            background-size:100%;
+        }
+
+    }
+
+    .location-animal,
+    .location-birdwatching {
+        background-image: url(../img/icon-map-bird-or-animal-species.png);
+        border: none;
+    }
+
+    .location-alert {
+        background-image: url(../img/icon-map-alert.png);
+        border: none;
+    }
+
+    .location-attention {
+        background-image: url(../img/icon-map-attention.png);
+        border: none;
+    }
+
+    .location-carpark {
+        background-image: url(../img/icon-map-carpark.png);
+        border: none;
+    }
+
+    .location-camphut {
+        background-image: url(../img/icon-map-camp_hut.png);
+        border: none;
+    }
+
+
+    .location-campsite,
+    .location-camping {
+        background-image: url(../img/icon-map-camping.png);
+        border: none;
+    }   
+
+    .location-hot_springs,
+    .location-hotsprings {
+        background-image: url(../img/icon-map-hotsprings.png);
+        border: none;
+    }
+
+    .location-swimming {
+        background-image: url(../img/icon-map-swimming.png);
+        border: none;
+    }
+
+    .location-side-trip {
+        background-image: url(../img/icon-map-side_trail.png);
+        border: none;
+    }
+
+    .location-isite,
+    .location-visitorcentre,
+    .location-VisitorCentre {
+        background-image: url(../img/icon-map-information.png);
+        border: none;
+    }
+
+    .location-hut,
+    .location-Hut, 
+    .location-Huts,
+    .location-huts {
+        background-image: url(../img/icon-map-huts.png);
+        border: none;
+    }
+
+    .location-shelter,
+    .location-Shelter {
+        background-image: url(../img/icon-map-shelter.png);
+        border: none;
+    }
+
+    .location-plane {
+        background-image: url(../img/icon-map-plane.png);
+        border: none;
+    }
+
+    .location-plant_species {
+        background-image: url(../img/icon-map-plantspecies.png);
+        border: none;
+    }
+
+    .location-tent,
+    .location-Camping,
+    .location-Campsite {
+        background-image: url(../img/icon-map-camping.png);
+        border: none;
+    }
+
+    .location-toilets {
+        background-image: url(../img/icon-map-toilets.png);
+        border: none;
+    }
+
+    .location-trailhead {
+        background-image: url(../img/icon-map-trailhead.png);
+        border: none;
+    }
+
+    .location-viewpoints,
+    .location-generic-poi,
+    .location-scenic-lookout,
+    .location-historic-site,
+    .location-historical-site,
+    .location-lake,
+    .location-feature,
+    .location-Feature {
+        background-image: url(../img/icon-map-viewpoints.png);
+        border: none;
+    }
+
+    .location-lake-river-stream-beach,
+    .location-natural-feature {
+        background-image: url(../img/icon-map-generic_nature.png);
+        border: none;
+    }
+
+    .location-volcano {
+        background-image: url(../img/icon-map-volcano.png);
+        border: none;
+    }
+
+    .location-waterfall {
+        background-image: url(../img/icon-map-waterfall.png);
+        border: none;
+    }
+
+    .location-user-photo {
+        background-image: url(../img/icon-map-generic_nature.png);
+        border: none;
+    }
+}
+
+
+@media (max-width: 400px), (max-height: 500px) {
+    body.map #map-key {
+        top:90px;
+    }
+}
+
+@media (max-width: 400px) {
+    body.map #map-key {
+        padding:0px;
+    }
+}
+
+@media (max-width: 330px) {
+    body.map #map-key {
+        width:200px;
+        margin-left:-100px;
+
+        table,
+        tr,
+        td {
+            display:block;
+        }
+    }
+}

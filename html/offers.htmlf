@@ -1,0 +1,26 @@
+<div class="text-column1">    
+    <h1>Offers</h1>
+    <ul class="banners">
+      <li>
+        <a class="offer-link" href=
+        "http://bookings.bookitsecure.com/pub/supplier.aspx?b=DEPART"><img src="img/doc-banner1.png" alt="Offers from
+        DOC"></a>
+      </li>
+      <li>
+        <a class="offer-link" href=
+        "http://www.airnewzealand.co.nz/special-deals-new-zealand#special-deals-great-walks"><img src="img/airnz-banner1.png" alt="Air New Zealand Great Walks Special Deals"></a>
+      </li>
+    </ul>
+</div>
+
+<div class="navbar navbar-fixed-bottom">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <ul class="options">
+              <li><a href="maps.html" class="maps">Maps</a></li>
+              <li><a href="offers.html" class="offers">Offers</a></li>
+              <li><a href="book.html" class="booknow">Book Now</a></li>
+            </ul>
+        </div>
+   </div>
+</div>

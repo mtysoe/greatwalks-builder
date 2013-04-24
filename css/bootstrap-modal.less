@@ -1,0 +1,46 @@
+
+/*
+Making changes to Bootstrap Modals?
+Keep this in mind these two issues
+  http://stackoverflow.com/questions/10636667/bootstrap-modal-appearing-under-background/11788713#11788713
+  http://stackoverflow.com/a/9953599
+AND also be sure to test the 'Elevation Profile' modal on the Samsung Galaxy Note tablet (GT-N8000)
+*/
+
+
+
+
+.modal {
+    font-family:CopseWoff, CopseTTF, serif;
+
+    &.fade {
+        left: 1%;
+        margin-left:0px;
+    }
+
+    &.fade.in {
+        margin-top: 0px;
+        top: 10px;
+        z-index:1100;
+    }
+
+    &.horizscroll {
+        width:98%;
+        left:1%;
+        top:1%;
+        margin-left:0px;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        -webkit-transform: translate3d(0,0,0); /* Put stuff into memory http://stackoverflow.com/a/9953599 */
+
+        * {
+            -webkit-transform: translate3d(0,0,0); /* Put stuff into memory http://stackoverflow.com/a/9953599 */
+        }
+    }
+}
+
+body.find-an-adventure {
+    .modal.fade {
+        left: 50%;
+    }
+}

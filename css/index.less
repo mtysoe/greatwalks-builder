@@ -1,0 +1,201 @@
+/* For the index page */
+
+body.index {
+
+	#wrapper {
+		padding-top:51px;
+		color: #fff;
+
+		#carousel {
+			margin-bottom: 0px;
+
+			.item {
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center 0px;
+			}
+
+			.slide1 {
+				background-image: url("../img/homepage-carousel-x1024-_default.jpg");
+			}
+
+			.slide2 {
+				background-image: url("../img/homepage-carousel-x1024-abel-tasman-coast-track.jpg");
+			}
+
+			.slide3 {
+				background-image: url("../img/homepage-carousel-x1024-heaphy-track.jpg");
+			}
+
+			.slide4 {
+				background-image: url("../img/homepage-carousel-x1024-lake-waikaremoana.jpg");
+			}
+
+			.slide5 {
+				background-image: url("../img/homepage-carousel-x1024-milford-track.jpg");
+			}
+
+			.slide6 {
+				background-image: url("../img/homepage-carousel-x1024-rakiura-track---stewart-island.jpg");
+			}
+
+			.slide7 {
+				background-image: url("../img/homepage-carousel-x1024-whanganui-journey.jpg");
+			}
+			
+			.carousel-control {
+				display:none;
+			}
+
+			&:after{ /*Preload images to prevent flicker */
+				content: url("../img/homepage-carousel-x1024-_default.jpg")
+						 url("../img/homepage-carousel-x1024-abel-tasman-coast-track.jpg")
+						 url("../img/homepage-carousel-x1024-heaphy-track.jpg")
+						 url("../img/homepage-carousel-x1024-lake-waikaremoana.jpg")
+						 url("../img/homepage-carousel-x1024-milford-track.jpg")
+						 url("../img/homepage-carousel-x1024-rakiura-track---stewart-island.jpg")
+						 url("../img/homepage-carousel-x1024-whanganui-journey.jpg");
+				display:none;
+			}
+		}
+
+		#doc-sign {
+			display:block;
+			text-decoration:none;
+			background: url("../img/homepage-sign.png");
+			background-size:100%;
+			position:relative;
+			top: -227px;
+			width:394px;
+			height: 227px;
+			margin: 0px auto -227px auto;
+
+			label,
+			a {
+				display:block;
+				width:100%;
+				text-indent: 100%; /* To hide inner text don't use text-indent:-10000px see: http://www.zeldman.com/2012/03/01/replacing-the-9999px-hack-new-image-replacement/ */
+				white-space: nowrap;
+				overflow: hidden;
+			}
+
+			.great-walks {
+				height:120px;
+				margin-bottom: 0px;
+			}
+
+			.find-an-adventure {
+				height: 80px;
+			}
+		}
+	}
+}
+
+@media (max-width: 600px), (max-height: 600px) {
+	body.index {
+		#wrapper {
+			#doc-sign {
+				position:relative;
+				top: -172px;
+				width:299px;
+				height: 172px;
+				margin: 0px auto -172px auto;
+
+				.great-walks {
+					height:94px;
+					margin-bottom: 0px;
+				}
+
+				.find-an-adventure {
+					height: 60px;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 500px), (max-height: 500px) {
+	body.index {
+		#wrapper {
+			#doc-sign {
+				position:relative;
+				top: -104px;
+				width: 180px;
+				height: 104px;
+				margin: 0px auto -104px auto;
+
+				.great-walks {
+					height:55px;
+					margin-bottom: 0px;
+				}
+
+				.find-an-adventure {
+					height: 40px;
+				}
+			}
+		}
+	}
+}
+
+.navbar-fixed-bottom .navbar-inner {
+	/* Also used on book.html and offers.html */
+	padding-top:0px;
+	background: #427630;
+
+	.container-fluid * {
+		width:auto;
+		text-align:center;
+		float:none;
+	}
+
+	ul.options {
+		margin: 0px auto;
+
+		li {
+			display:inline;
+
+			a {
+				display:inline-block;
+				background: url("../img/homepage-buttons.png") no-repeat;
+				background-size: 258px 44px;
+				width: 100px;
+				padding-top: 60px;
+				padding-bottom:5px;
+				text-transform:uppercase;
+				text-align:center;
+				color:white;
+				font-weight:bold;
+
+				&:hover {
+					text-decoration:none;
+				}
+
+				&.maps {
+					background-position: 30px 10px;
+				}
+
+				&.offers {
+					background-position: -80px 10px;
+				}
+
+				&.booknow {
+					background-position: -193px 10px;
+				}
+			}
+		}
+	}
+}
+
+
+@media  (max-width: 300px), (max-height: 400px) {
+	body.index #wrapper .navbar-fixed-bottom .navbar-inner {
+		min-height: auto;
+
+		ul.options li a {
+			background:transparent;
+			padding-top: 0px;
+			padding-bottom:0px;
+		}
+	}
+}
+

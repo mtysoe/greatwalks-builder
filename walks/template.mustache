@@ -1,0 +1,115 @@
+<a id="weta" rel="popover" data-placement="right" data-content="<h3>Weta</h3><b class='distance_away'>Distance: really close!</b>Seriously big nocturnal creatures that live in a variety of habitats including: pasture, shrub, forests, and caves. Weta excavate holes under stones, rotting logs, or in trees. They sometimes occupy pre-formed burrows.">Weta</a>
+
+<div style="background-image: url(img/walks/{{map_id}}/map.jpg); background-size: {{map_pixel_width}}px {{map_pixel_height}}px; width:{{map_pixel_width}}px; height:{{map_pixel_height}}px; position:relative; display:none" id="map" class="have-transition">
+	<div id="youarehere">
+		<div class="dot"></div>
+		<div class="offmap">offmap</div>
+	</div>
+	{{#locations}}
+		<a class="location location-icon location-{{Type}}" rel="popover" style="position:absolute; left: {{pixel.left}}px; top:{{pixel.top}}px;" data-longitude="{{Long}}" data-latitude="{{Lat}}" data-content-template="<h3>{{Name}}</h3>[DISTANCE]{{Description}}">Click to toggle popover</a>
+	{{/locations}}
+</div>
+
+<div id="user_actions" class="hidden">
+	<p class="take-photo"><a href="#camera" class="btn" id="take-photo">Take Photo</a></p>
+	<p class="refresh-geolocation"><a class="btn" id="refresh-geolocation">Refresh Geolocation</a></p>
+	<p class="last-updated"></p>
+</div>
+
+<div id="map_id">{{map_id}}</div>
+ 
+<img src="img/camera-placeholder.jpg" id="photo-preview">
+
+<div id="no-touch-zoom">
+	<a href="#zoom-out" class="zoom-out">-</a>
+	<a href="#zoom-in" class="zoom-in">+</a>
+</div>
+
+<a id="toggle-map-key" href="#map-key">Key</a>
+
+<div id="map-key">
+	<ul>
+		<li class="greatwalk">Great Walk<span></span></li>
+		<li class="sidetrack">Side Track<span></span></li>
+		<li class="road">Road<span></span></li>
+	</ul>
+	<table>
+		<tr>
+			<td>
+				<img src="img/icon-map-information.png" alt=""> Information
+			</td>
+			<td>
+				<img src="img/icon-map-alert.png" alt=""> Alert
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="img/icon-map-plantspecies.png" alt=""> Plant Species
+			</td>
+			<td>
+				<img src="img/icon-map-shelter.png" alt=""> Shelter
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="img/icon-map-side_trail.png" alt=""> Side-trail
+			</td>
+			<td>
+				<img src="img/icon-map-swimming.png" alt=""> Swimming
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="img/icon-map-toilets.png" alt=""> Toilets
+			</td>
+			<td>
+				<img src="img/icon-map-trailhead.png" alt=""> Trailhead
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="img/icon-map-viewpoints.png" alt=""> Viewpoints
+			</td>
+			<td>
+				<img src="img/icon-map-volcano.png" alt=""> Volcano
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="img/icon-map-waterfall.png" alt=""> Waterfall
+			</td>
+			<td>	
+				<img src="img/icon-map-airport.png" alt=""> Airport
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="img/icon-map-bird-or-animal-species.png" alt=""> Birds or Animals
+			</td>
+			<td>
+				<img src="img/icon-map-camping.png" alt=""> Camping
+			</td>
+		</tr>
+		<tr>	
+			<td>
+				<img src="img/icon-map-camp_hut.png" alt=""> Camp/Hut
+			</td>
+			<td>
+				<img src="img/icon-map-carpark.png" alt=""> Carpark
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="img/icon-map-generic_nature.png" alt=""> Misc. Nature
+			</td>
+			<td>
+				<img src="img/icon-map-hotsprings.png" alt=""> Hotsprings
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src="img/icon-map-huts.png" alt=""> Hut
+			</td>
+		</tr>
+	</table>
+</div>

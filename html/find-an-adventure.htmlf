@@ -1,0 +1,117 @@
+<div class="text-column1">
+  <h1>Find an adventure</h1>
+
+  <ol class="chooser">
+    <li class="where"><span>1.</span><a href="#where" role="button" data-toggle="modal">Where do you want to go?</a></li>
+    <li class="see"><span>2.</span><a href="#see" role="button" data-toggle="modal">What do you want to see?</a></li>
+    <li class="time"><span>3.</span><a href="#time" role="button" data-toggle="modal">How much time do you have?</a></li>
+  </ol>
+
+
+  <div id="results">
+    <h2>We think you'll like</h2>
+
+    <ol>
+      <li class="where-northisland where-surpriseme see-native-bush see-birds see-beaches see-lakes see-culture time-3-5-days">
+        <a href="walk-lake-waikaremoana.html">Lake Waikaremoana</a>
+      </li>
+
+      <li class="where-northisland where-surpriseme see-native-bush see-birds see-mountains see-volcanos see-lakes time-3-5-days">
+        <a href="walk-tongariro-northern-circuit.html">Tongariro Northern Circuit</a>
+      </li>
+
+      <li class="where-northisland where-surpriseme see-native-bush see-birds see-culture time-3-5-days">
+        <a href="walk-whanganui-journey.html">Whanganui Journey</a>
+      </li>
+
+      <li class="where-southisland where-surpriseme see-native-bush see-birds see-beaches time-1-2-days time-3-5-days">
+        <a href="walk-abel-tasman-coast-track.html">Abel Tasman Coast Track</a>
+      </li>
+
+      <li class="where-southisland where-surpriseme see-native-bush see-birds see-beaches time-3-5-days">
+        <a href="walk-heaphy-track.html">Heaphy Track</a>
+      </li>
+
+      <li class="where-southisland where-surpriseme see-native-bush see-birds see-mountains see-lakes time-1-2-days time-3-5-days">
+        <a href="walk-kepler-track.html">Kepler Track</a>
+      </li>
+
+      <li class="where-southisland where-surpriseme see-native-bush see-birds see-mountains see-lakes time-3-5-days">
+        <a href="walk-milford-track.html">Milford Track</a>
+      </li>
+
+      <li class="where-southisland where-surpriseme see-native-bush see-birds see-mountains see-lakes time-1-2-days time-3-5-days">
+        <a href="walk-routeburn-track.html">Routeburn Track</a>
+      </li>
+
+      <li class="where-southisland where-surpriseme see-native-bush see-birds see-beaches time-1-2-days time-3-5-days">
+        <a href="walk-rakiura-track---stewart-island.html">Rakiura Track - Stewart Island</a>
+      </li>
+    </ol>
+     <p id="warning-1-2-days">The Great Walks take 3-5 days to complete, but you can walk some of them in parts if your time is limited. <a href="info.html" class="btn">contact us</a> or visit your nearest DOC Visitor Centre for more information.</p>
+    <a href="#" class="btn resetFinder">Start over</a>
+  </div>
+
+  <div id="no-results">
+    <h2>Awesome choices!</h2>
+    <p>Unfortunately we couldn't match all your criteria.</p>
+    <p>Please choose again, or <a href="info.html" class="btn">contact us</a> to talk about your Great Walks plans -we'd love to help you.</p>
+    <a href="#" class="btn resetFinder">Start over</a>
+  </div>
+
+
+</div>
+
+
+  <div id="where" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <ol>
+      <li id="where-northisland">
+        <a href="#">North Island</a>
+      </li>
+      <li id="where-southisland">
+        <a href="#">South Island</a>
+      </li>
+      <li id="where-surpriseme">
+        <a href="#">Surprise me!</a>
+      </li>
+    </ol>
+  </div>
+
+  <div id="see" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <ol>
+      <li id="see-native-bush">
+        <a href="#">Native bush</a>
+      </li>
+      <li id="see-birds">
+        <a href="#">Birds</a>
+      </li>
+      <li id="see-beaches">
+        <a href="#">Beaches</a>
+      </li>
+      <li id="see-mountains">
+        <a href="#">Mountains</a>
+      </li>
+      <li id="see-volcanos">
+        <a href="#">Volcanos</a>
+      </li>
+      <li id="see-lakes">
+        <a href="#">Lakes</a>
+      </li>
+      <li id="see-culture">
+        <a href="#">Cultural experience</a>
+      </li>
+    </ol>
+  </div>
+
+ 
+
+  <div id="time" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <ol>
+      <li id="time-1-2-days">
+        <a href="#">1-2 days</a>
+      </li>
+      <li id="time-3-5-days">
+        <a href="#">3-5 days</a>
+      </li>
+    </ol>
+  </div>
