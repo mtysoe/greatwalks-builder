@@ -26,13 +26,14 @@ var fs = require('fs'),
       fs.closeSync(fdr);
       return fs.closeSync(fdw);
     },
-    i;
+    i,
+    success_blackhole = function(){};
 
 process.stdout.write("Generating Audio (and Fonts)\n");
 
 (function(){
-    fs.mkdir(path.join(greatwalks_repo, "audio")); //probably already exists
-    fs.mkdir(path.join(greatwalks_repo, "fonts")); //probably already exists
+    fs.mkdir(path.join(greatwalks_repo, "audio"), success_blackhole); //probably already exists
+    fs.mkdir(path.join(greatwalks_repo, "fonts"), success_blackhole); //probably already exists
 }());
 
 (function(){
