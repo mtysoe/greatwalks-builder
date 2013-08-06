@@ -40,7 +40,8 @@ var fs = require('fs'),
             console.log(stderr);
             process.exit();
         }
-    };
+    },
+	blackhole_function = function(){};
 
 String.prototype.endsWith = function(suffix) {
     return this.substr(this.length - suffix.length) === suffix;
@@ -54,8 +55,8 @@ process.stdout.write("Generating Images\n");
 
 (function(){
     process.stdout.write("Generating inside " + greatwalks_repo + "\n");
-    fs.mkdir(path.join(greatwalks_repo, "img"), '0777'); //probably already exists
-    fs.mkdir(path.join(greatwalks_repo, "img/walks"), '0777');//probably already exists
+    fs.mkdir(path.join(greatwalks_repo, "img"), '0777', blackhole_function); //probably already exists
+    fs.mkdir(path.join(greatwalks_repo, "img/walks"), '0777', blackhole_function);//probably already exists
 }());
 
 (function(){
@@ -96,14 +97,17 @@ process.stdout.write("Generating Images\n");
 }());
 
 (function () {
-    var svg_source;
+    var svg_source,
+        command;
     
     svg_source = path.join(approot, "images/great-walks-icon.svg");
 
     process.stdout.write(" - Generating Phonegap Android icons");
     if(fs.existsSync(greatwalks_phonegap_repo) && fs.statSync(greatwalks_phonegap_repo).isDirectory()) {
         // android icons
-        execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_phonegap_repo, "res/drawable-hdpi/ic_launcher.png") + " --export-width=72");
+        command = "inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_phonegap_repo, "res/drawable-hdpi/ic_launcher.png") + " --export-width=72"
+        process.stdout.write("\n" + command + "\n");
+        execSync(command);
         execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_phonegap_repo, "res/drawable-ldpi/ic_launcher.png") + " --export-width=36");
         execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_phonegap_repo, "drawable-mdpi/ic_launcher.png") + " --export-width=48");
         execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_phonegap_repo, "drawable-xhdpi/ic_launcher.png") + " --export-width=96");
@@ -221,7 +225,7 @@ process.stdout.write("Generating Images\n");
             image_file_path,
             image_destination_path;
         if(fs.statSync(walk_fullpath).isDirectory()) {
-            fs.mkdir(path.join(greatwalks_repo, "img/walks", walk_sanitised_name)); //probably already exists
+            fs.mkdir(path.join(greatwalks_repo, "img/walks", walk_sanitised_name), blackhole_function); //probably already exists
             process.stdout.write("   - Generating " + walk_name + " map ");
             map_dimensions_json_string = execSync(command);
             if(map_dimensions_json_string.toString().indexOf("{\"width") >= 0) {

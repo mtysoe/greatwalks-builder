@@ -43,13 +43,14 @@ var fs = require('fs'),
             }
             fs.writeFileSync(to_path, tree.toCSS());
         });
-    };
+    },
+	blackhole_function = function(){};
 
 process.stdout.write("Generating CSS\n");
 
 (function(){
-    fs.mkdir(path.join(greatwalks_repo, "css")); //probably already exists
-    fs.mkdir(path.join(greatwalks_repo, "css/bootstrap-css"));//probably already exists
+    fs.mkdir(path.join(greatwalks_repo, "css"), blackhole_function); //probably already exists
+    fs.mkdir(path.join(greatwalks_repo, "css/bootstrap-css"), blackhole_function);//probably already exists
 }());
 
 (function(){

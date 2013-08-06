@@ -34,13 +34,14 @@ var fs = require('fs'),
       return fs.closeSync(fdw);
     },
     file_handle,
-    i;
+    i,
+	blackhole_function = function(){};
 
 process.stdout.write("Generating JavaScript\n");
 
 (function(){
-    fs.mkdir(path.join(greatwalks_repo, "js")); //probably already exists
-    fs.mkdir(path.join(greatwalks_repo, "js/vendor"));//probably already exists
+    fs.mkdir(path.join(greatwalks_repo, "js"), blackhole_function); //probably already exists
+    fs.mkdir(path.join(greatwalks_repo, "js/vendor"), blackhole_function);//probably already exists
 }());
 
 (function(){
