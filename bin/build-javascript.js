@@ -54,7 +54,6 @@ process.stdout.write("Generating JavaScript\n");
       vendor_javascript_path = path.join(approot, "javascript/vendor", vendor_javascripts[i]);
       if(ignore_names.indexOf(vendor_javascript_path) !== -1) continue;
       destination = path.join(greatwalks_repo, "js/vendor", vendor_javascripts[i]);
-      
       copyFileSync(vendor_javascript_path, destination);
   }
   process.stdout.write(" - Copied static files\n");
