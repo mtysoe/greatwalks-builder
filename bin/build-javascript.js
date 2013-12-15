@@ -1,5 +1,5 @@
-/*global process require __dirname Buffer*/
-"use strict"; /* Ignore this JSLint complaint, it's a bit stupid*/
+/*global process, require, __dirname, Buffer */
+"use strict"; /* Ignore this JSLint complaint, it's a bit stupid */
 var fs = require('fs'),
     path = require('path'),
     approot = path.dirname(__dirname),
@@ -45,6 +45,7 @@ process.stdout.write("Generating JavaScript\n");
 }());
 
 (function(){
+  var destination;
   // copy over the Phonegap vendor JavaScript
   copyFileSync(path.join(approot, "javascript/cordova/android.js"), path.join(greatwalks_repo, "cordova.js"));
   //Copy over a NodeJS web server (used only for debug purposes)
@@ -52,7 +53,9 @@ process.stdout.write("Generating JavaScript\n");
   for(i = 0; i < vendor_javascripts.length; i++){
       vendor_javascript_path = path.join(approot, "javascript/vendor", vendor_javascripts[i]);
       if(ignore_names.indexOf(vendor_javascript_path) !== -1) continue;
-      copyFileSync(vendor_javascript_path, path.join(greatwalks_repo, "js/vendor", vendor_javascripts[i]));
+      destination = path.join(greatwalks_repo, "js/vendor", vendor_javascripts[i]);
+      
+      copyFileSync(vendor_javascript_path, destination);
   }
   process.stdout.write(" - Copied static files\n");
 }());
