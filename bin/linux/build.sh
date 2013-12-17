@@ -6,3 +6,4 @@ $DIR/build-images.sh
 $DIR/build-css.sh
 $DIR/build-html.sh
 $DIR/build-javascript.sh
+$DIR/build-audio.sh

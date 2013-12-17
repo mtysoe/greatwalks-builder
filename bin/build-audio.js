@@ -1,4 +1,4 @@
-/*global process require __dirname Buffer*/
+/*global process, require, __dirname, Buffer*/
 "use strict"; /* Ignore this JSLint complaint, it's a bit stupid*/
 var fs = require('fs'),
     path = require('path'),
