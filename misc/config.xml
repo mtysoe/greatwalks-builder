@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.phonegap.departmentofconservation"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <name>GreatWalks</name>
+
+    <description>
+        Take a walk, a Great Walk, through some of New Zealand’s most awe-inspiring landscapes on premier walking tracks. 
+    </description>
+
+    <author href="http://greatwalks.co.nz/" email="greatwalks@doc.govt.nz">
+        Department of Conservation (New Zealand)
+    </author>
+
+    <gap:platform name="ios" />
+    <gap:platform name="android" />
+
+    <preference name="ios-statusbarstyle" value="black" />
+    <preference name="splash-screen-duration" value="0"/>
+
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+
+</widget>

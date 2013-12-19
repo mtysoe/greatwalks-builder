@@ -1,7 +1,7 @@
 /*globals require, process, console*/
 // Note: Useful only for debug purposes when using desktop browsers.
 // Chrome doesn't like making geopositioning available when accessing files via file:///
-// so a small web server allows accessing browser features
+// so a small web server allows accessing browser features via http://
 
 "use strict";
 

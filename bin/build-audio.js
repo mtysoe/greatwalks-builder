@@ -29,7 +29,7 @@ var fs = require('fs'),
     i,
     success_blackhole = function(){};
 
-process.stdout.write("Generating Audio (and Fonts)\n");
+process.stdout.write("Generating Audio (and Fonts, and Phonegap Build)\n");
 
 (function(){
     fs.mkdir(path.join(greatwalks_repo, "audio"), success_blackhole); //probably already exists
@@ -57,5 +57,14 @@ copyFileSync(
   path.join(greatwalks_repo, "fonts", "copse.ttf")
 );
 process.stdout.write(" - Copied static font files\n");
+
+(function(){
+  copyFileSync(
+    path.join(approot, "misc", "config.xml"),
+    path.join(greatwalks_repo, "config.xml")
+  );
+}());
+process.stdout.write(" - Copied Phonegap Build config.xml file\n");
+
 
 process.stdout.write("Success\n\n");
