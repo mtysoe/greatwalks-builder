@@ -66,7 +66,7 @@
             $html_title = $("title");
             $page_contents_wrapper_page1 = $("#page1");
             $page_contents_wrapper_page2 = $("#page2");
-            $body.on(listen_on, "a", fastPress_hyperlink);
+            // $body.on(listen_on, "a", fastPress_hyperlink);
         };
     $.prototype.fastPress = function(callback){
         if(callback === undefined) {
