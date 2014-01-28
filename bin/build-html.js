@@ -71,7 +71,7 @@ String.prototype.CSV = function(overrideStrDelimiter) {
              ],
         strMatchedDelimiter,
         strMatchedValue,
-        csv_string = this.replace(/,,/g, ", ,").removeNonStandardCharacters(),
+        csv_string = this.replace(/,,/g, ", ,"),
         arrMatches = null;
 
      while (arrMatches = objPattern.exec(csv_string)) { /*JSLINT IGNORE*/
@@ -465,7 +465,7 @@ process.stdout.write("Generating HTML\n");
         if(!fs.statSync(walk_fullpath).isDirectory() && walk_name.endsWith(".csv")){
             process.stdout.write(" - Found a CSV: " + walk_name + "\n");
             was_able_to_read_a_line = false;
-            locations_data = fs.readFileSync(walk_fullpath, 'utf8').toString().CSVMap();
+            locations_data = fs.readFileSync(walk_fullpath).toString().CSVMap();
             //throw JSON.stringify(locations_data); //DEBUG
 
             for(var y = 0; y < locations_data.length; y++){
@@ -798,6 +798,7 @@ function process_page(htmlf_path, page_title, page_mustache_data, page_id){
                         .replace(/&Uuml;/g, "\u016A")  //macronised U
                         .replace(/&uuml;/g, "\u016B") //macronised u
                         .replace(/Maori/gi, function(match, offset, the_string){
+                            //may be too broad, may cause problems if the word Maori is in a URL or something
                             var maori_length = "Maori".length,
                                 less_than_offset = the_string.lastIndexOf("<", offset + maori_length - 1),
                                 greater_than_offset = the_string.lastIndexOf(">", offset + maori_length - 1),
@@ -813,16 +814,16 @@ function process_page(htmlf_path, page_title, page_mustache_data, page_id){
                             } else {
                                 return match;
                             }
-                        }) //may be too broad, may cause problems if the word Maori is in a URL or something
-                        .replace(/([0-9.]+) km/gi, function(match, contents, offset, s){
-                            return format_kilometres(parseFloat(contents));
-                        })
-                        .replace(/([0-9.]+) metres/gi, function(match, contents, offset, s){
-                            return format_metres(parseFloat(contents));
-                        })
-                        .replace(/([0-9.]+) kg/gi, function(match, contents, offset, s){
-                            return format_kilograms(parseFloat(contents));
                         });
+                        //.replace(/([0-9.]+) km/gi, function(match, contents, offset, s){
+                        //    return format_kilometres(parseFloat(contents));
+                        //})
+                        //.replace(/([0-9.]+) metres/gi, function(match, contents, offset, s){
+                        //    return format_metres(parseFloat(contents));
+                        //})
+                        //.replace(/([0-9.]+) kg/gi, function(match, contents, offset, s){
+                        //    return format_kilograms(parseFloat(contents));
+                        //});
     }
     return html_page;
 }
