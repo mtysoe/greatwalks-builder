@@ -102,6 +102,13 @@ process.stdout.write("Generating Images\n");
     
     svg_source = path.join(approot, "images/great-walks-icon.svg");
 
+    process.stdout.write(" - Generating icons");
+    execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_repo, "img/icon-ldpi.png") + " --export-width=36");
+    execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_repo, "img/icon-mdpi.png") + " --export-width=48");
+    execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_repo, "img/icon-hdpi.png") + " --export-width=72");
+    execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_repo, "img/icon-xhdpi.png") + " --export-width=96");
+    process.stdout.write("...complete.\n");
+
     process.stdout.write(" - Generating Phonegap Android icons");
     if(fs.existsSync(greatwalks_phonegap_repo) && fs.statSync(greatwalks_phonegap_repo).isDirectory()) {
         // android icons
@@ -153,6 +160,8 @@ process.stdout.write("Generating Images\n");
     } else {
         process.stdout.write("\n   - WARNING bypassed because there's no " + path.basename(greatwalks_phonegap_ios_repo) + " directory.\n");
     }
+
+
 
     process.stdout.write(" - Generating logos");
     svg_source = path.join(approot, "images/great-walks-logo.svg");
