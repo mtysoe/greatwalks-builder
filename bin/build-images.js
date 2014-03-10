@@ -107,6 +107,12 @@ process.stdout.write("Generating Images\n");
     execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_repo, "img/icon-mdpi.png") + " --export-width=48");
     execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_repo, "img/icon-hdpi.png") + " --export-width=72");
     execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_repo, "img/icon-xhdpi.png") + " --export-width=96");
+
+    execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_repo, "img/icon-57.png") + " --export-width=57");
+    execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_repo, "img/icon-72.png") + " --export-width=72");
+    execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_repo, "img/icon-114.png") + " --export-width=114");
+    execSync("inkscape \"" + svg_source + "\" -z --export-png=" + path.join(greatwalks_repo, "img/icon-144.png") + " --export-width=144");
+
     process.stdout.write("...complete.\n");
 
     process.stdout.write(" - Generating Phonegap Android icons");
