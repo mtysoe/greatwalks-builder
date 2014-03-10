@@ -48,8 +48,7 @@ process.stdout.write("Generating JavaScript\n");
   var destination,
       is_jquery,
       is_hammer;
-  // copy over the Phonegap vendor JavaScript
-  copyFileSync(path.join(approot, "javascript/cordova/android.js"), path.join(greatwalks_repo, "cordova.js"));
+
   //Copy over a NodeJS web server (used only for debug purposes)
   copyFileSync(path.join(approot, "javascript/debug-web-server/web.js"), path.join(greatwalks_repo, "web.js"));
   for(i = 0; i < vendor_javascripts.length; i++){
@@ -59,9 +58,7 @@ process.stdout.write("Generating JavaScript\n");
       is_jquery = (vendor_javascripts[i] === "jquery.min.js");
       is_hammer = (vendor_javascripts[i] === "hammer.js");
       file_handle = fs.openSync(destination, 'w');
-      if(!is_jquery && !is_hammer) fs.writeSync(file_handle, "\n(jQuery(function(){\n");
       fs.writeSync(file_handle, fs.readFileSync(vendor_javascript_path, 'utf8').toString());
-      if(!is_jquery && !is_hammer) fs.writeSync(file_handle, "\n}))\n");
       fs.closeSync(file_handle);
   }
   process.stdout.write(" - Copied static files\n");
