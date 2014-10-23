@@ -85,9 +85,11 @@ String.prototype.CSV = function(overrideStrDelimiter) {
          } else {
              strMatchedValue = arrMatches[3];
          }
-         if(strMatchedValue.length !== 0){
+         if(!strMatchedValue) console.log("what", strMatchedValue);
+         if(strMatchedValue && strMatchedValue.length !== 0){
             arrData[arrData.length - 1].push(strMatchedValue);
          } else {
+            arrData[arrData.length - 1].push("");
          }
      }
      if(arrData[arrData.length - 1].length === 0 ) {
@@ -484,6 +486,9 @@ process.stdout.write("Generating HTML\n");
                     row.GreatWalkId = location_id_mapping[row.GreatWalk];
                     if(row.GreatWalkId === undefined) {
                         throw "Unable to find GreatWalkId for " + row.GreatWalk;
+                    }
+                    if(row.Description.toLowerCase() === "yes") {
+                        row.Description = "";
                     }
                     walk_csv_path = path.join(approot, "walks", row.GreatWalkId, "locations.csv");
                     if(row.POIIconType) {
