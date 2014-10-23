@@ -1,4 +1,4 @@
-CSV ID,POIIconType,GreatWalk,Map icon name,Longitude,Latitude,Description,Plotted on app,Action,Longitude (original),Latitude (original),Longitude (on app),Latitude (on app),Checked,Comments
+CSV ID,POIIconType,GreatWalk,Name,Longitude,Latitude,Description,Plotted on app,Action,Longitude (original),Latitude (original),Longitude (on app),Latitude (on app),Checked,Comments
 130,Feature,WhanganuiJourney,Ohura Falls,175.060766,-39.038136,,Yes,Update co-ordinates,175.038,-39.0547,175.038203,-39.052937,13/05/2014,Cannot locate
 120,Campsite,WhanganuiJourney,John Coull Campsite,174.914205,-39.23124,,No,Combine with CSV ID 125,174.914,-39.233,174.914205,-39.23124,Check app - should be combined with CSV ID 125,New coordinate
 132,Shelter,AbelTasmanCoastTrack,Wainui Carpark Shelter,172.956374,-40.809581,,Yes,Update coordinates,172.957,-40.8099,172.957169,-40.808148,Get local DOC staff member to advise correct location on screenshot,Cannot locate
