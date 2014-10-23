@@ -49,6 +49,7 @@
                 audio_element.load();
                 audio_element.play();
             }
+            event.preventDefault();
         });
         $(".walk-detail-header a").fastPress(function(){
             $(this).parent().toggleClass("open").next(".walk-detail").toggleClass('expanded');

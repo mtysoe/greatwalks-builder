@@ -9,15 +9,14 @@
     Call us
     </h2>
     <p>
-        <a href="tel:0800694732" class="btn phone"></a>0800 NZ GREATWALKS<br>
-         Calling from outside New Zealand?<br>
-         <a href="tel:+6493033109">+64 9 303 3109</a>
+        Phone <a href="tel:0800694732" class="btn phone"></a>0800 694732 if you are calling from within New Zealand.<br><br>
+         Calling from outside New Zealand? Phone <a href="tel:+6493033109" class="btn phone"></a> +64 9 303 3109
       </p>
     <h2>
     Email us
     </h2>
     <p>
-      <a href="mailto:greatwalks@doc.govt.nz" class="btn email">greatwalks@doc.govt.nz</a>
+      <a href="mailto:greatwalks@doc.govt.nz" class="btn email"></a> <a href="mailto:greatwalks@doc.govt.nz">greatwalks@doc.govt.nz</a>
     </p>
     <h2>
       Come see us
@@ -26,24 +25,21 @@
       <a href="visitor-centre.html">Find the nearest DOC Visitor Centre</a>.
     </p>
     <p>
-      While you&rsquo;re here, you can also pick up maps and other things for your
-      Great Walk.
+      While you&rsquo;re here, you can also pick up maps and other useful items for your Great Walk.
     </p>
-        <h2>
+    <h2>
       Book online
     </h2>
     
     <p>
       <a class="btn bookonline"
       href=
-      "http://bookings.bookitsecure.com/pub/supplier.aspx?b=DEPART">Book
-      now</a>
-    </p>
-    
-    <p>
-      For more resources and info, visit the <a
-      href="http://www.doc.govt.nz/parks-and-recreation/tracks-and-walks/great-walks/">
-      Great Walks on the DOC website</a>.
+      "https://booking.doc.govt.nz/">Book
+      now</a> <a
+      href=
+      "https://booking.doc.govt.nz/">Book Online</a><br><br>
+
+      To book online visit <a href="http://www.greatwalks.co.nz/">Great Walks</a> or watch a short video and find out what you can expect to see and do on a Great Walk and which one appeals to you! Plus, you’ll also find loads more information on our <a href="http://www.greatwalks.co.nz/">Great Walks website</a> to help you plan and prepare for your Great Walks adventure.
     </p>
 </div>
 

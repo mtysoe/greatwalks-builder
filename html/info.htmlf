@@ -5,38 +5,45 @@
 		Call us
 		</h2>
       <p>
-        <a href="tel:0800694732" class="btn phone"></a>0800 NZ GREATWALKS<br>
-         Calling from outside New Zealand?<br />
-         <a href="tel:+6493033109">+64 9 303 3109</a>
+        Phone <a href="tel:0800694732" class="btn phone"></a><a href="tel:0800694732">0800 694 732</a> if you are calling from within New Zealand.<br><br>
+        Phone  <a href="tel:+6493033109">+64 9 303 3109</a> if you are calling from overseas.
       </p>
 		<h2>
 		Email us
 		</h2>
       <p>
-      <a href="mailto:greatwalks@doc.govt.nz" class="btn email">greatwalks@doc.govt.nz</a><br />
-       Fix required on the track? <a href="mailto:greatwalks@doc.govt.nz?subject=Issue on Great Walks track- please fix" class="report_error">Tell us about it</a>.<br />
+      <a href="mailto:greatwalks@doc.govt.nz" class="btn email">greatwalks@doc.govt.nz</a> <a href="mailto:greatwalks@doc.govt.nz">greatwalks@doc.govt.nz</a><br /><br />
+       Fix required on the track? <a href="mailto:greatwalks@doc.govt.nz?subject=Issue on Great Walks track- please fix" class="report_error">Tell us about it</a>.<br /><br />
        Feedback about this app? <a href="mailto:greatwalks@doc.govt.nz?subject=Great Walks app feedback">We'd love to hear from you</a>!
       </p>
    
       <h2>Website</h2>
-      <p>Learn more about the Great Walks on the <a href="http://greatwalks.co.nz">Great Walks website</a>.</p>
-    
+      <p>Visit <a href="http://www.greatwalks.co.nz/">Great Walks</a> to learn more about New Zealand’s premier walking tracks. From native forests, lakes and rivers to rugged mountain peaks, deep gorges and vast valleys there’s a Great Walk for everyone.</p>
+          
       <h2>About the app</h2>
-      <p>This app was built by the Department of Conservation, Te Papa Atawhai.</p>
+      <p>This app was built by the Department of Conservation &mdash; Te Papa Atawhai.</p>
         
       <h2>Credits</h2>
       <p>
-      Coding and project management by <a href="http://catalyst.net.nz">Catalyst IT</a>.<br />
+      Coding and project management by <a href="http://catalyst.net.nz">Catalyst IT</a>.<br /><br />
       Design by <a href="http://www.pikselin.com">Pikselin</a>.
       </p>
 
       <h2>Privacy</h2>
       <p>
-      The Department of Conservation is committed to protecting the privacy and security of the users of the Great Walks app. You may browse and access information contained within this app without providing any personal information. Where you voluntarily provide personal information (e.g., through email feedback), we will only use that information to communicate with you. We will keep any such information secure and will not disclose it to any third parties.
+      The Department of Conservation is committed to protecting the privacy and security of the users of the Great Walks app. You may browse and access information contained within this app without providing any personal information. Where you voluntarily provide personal information (e.g. through email feedback), we will only use that information to communicate with you. We will keep any such information secure and will not disclose it to any third parties.
       </p>
 
       <h2>Copyright</h2>
       <p>
-      Unless otherwise indicated, the content on this website is Crown copyright. In accordance with NZGOAL principles, all DOC content (text, images, sounds and maps) within this application is licensed under the terms of CC-BY. Source code is available from github under a number of open source licenses.
+      Unless otherwise indicated, the material on this website is protected by Crown copyright. You can reproduce this Crown copyright material free of charge without further permission as long as you:
       </p>
+      <ul>
+        <li>Reproduce the material accurately</li>
+        <li>Do not use the material in a derogatory manner or a misleading context</li>
+        <li>Acknowledge the source and copyright status of the material</li>
+        <li>Use the material for non-commercial purposes.</li>
+      </ul>
+      <p>If you want to use the material for commercial purposes you must get permission from DOC.</p>
+      
 </div>
