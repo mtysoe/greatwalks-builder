@@ -85,7 +85,6 @@ String.prototype.CSV = function(overrideStrDelimiter) {
          } else {
              strMatchedValue = arrMatches[3];
          }
-         if(!strMatchedValue) console.log("what", strMatchedValue);
          if(strMatchedValue && strMatchedValue.length !== 0){
             arrData[arrData.length - 1].push(strMatchedValue);
          } else {
