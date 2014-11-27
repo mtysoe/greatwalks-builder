@@ -2,4 +2,4 @@
 
 DIR=$( cd "$( dirname "$0" )" && pwd )
 
-node $DIR/../build-javascript.js
+nodejs $DIR/../build-javascript.js
