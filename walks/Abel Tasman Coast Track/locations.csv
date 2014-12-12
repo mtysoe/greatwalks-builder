@@ -14,7 +14,7 @@ Name,Description,Type,Long,Lat,PixelOffsetLeft,PixelOffsetTop
 "Waiharakeke Campsite"," ","campsite","173.015246","-40.849398"," "," "
 "Awaroa Hut and Campsite","","camphut","173.017507","-40.865272","-20"," "
 "Onetahuti Beach Campsite","","campsite","173.046378","-40.888682","20"," "
-"Bark Bay Hut"," ","camphut","173.048587","-40.916104","5","5"
+"Bark Bay Hut"," ","camphut","173.048587","-40.916104","-15","-5"
 "Tonga Quarry Campsite"," ","campsite","173.050557","-40.894554","10","10"
 "Torrent Bay Village Campsite"," ","campsite","173.045791","-40.947619","15","7"
 "Te Puketea Campsite"," ","campsite","173.063883","-40.953496"," ","-5"
