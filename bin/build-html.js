@@ -71,7 +71,7 @@ String.prototype.CSV = function(overrideStrDelimiter) {
              ],
         strMatchedDelimiter,
         strMatchedValue,
-        csv_string = this.replace(/,,/g, ", ,").removeNonStandardCharacters(),
+        csv_string = this.replace(/,,/g, ", ,"),
         arrMatches = null;
 
      while (arrMatches = objPattern.exec(csv_string)) { /*JSLINT IGNORE*/
@@ -85,9 +85,10 @@ String.prototype.CSV = function(overrideStrDelimiter) {
          } else {
              strMatchedValue = arrMatches[3];
          }
-         if(strMatchedValue.length !== 0){
+         if(strMatchedValue && strMatchedValue.length !== 0){
             arrData[arrData.length - 1].push(strMatchedValue);
          } else {
+            arrData[arrData.length - 1].push("");
          }
      }
      if(arrData[arrData.length - 1].length === 0 ) {
@@ -253,7 +254,7 @@ function check_for_nearby_locations(location){
 var share_social_details = {
     "default":
         {
-        "social_text": "I'm goingn a Great Walk in New Zealand",
+        "social_text": "I'm going on a Great Walk in New Zealand",
         "facebook_url": "http://greatwalks.co.nz/",
         "facebook_image": "http://www.greatwalks.co.nz/sites/all/themes/sparks_responsive/logo.png",
         "twitter_url": "http://bit.ly/SLFPlX"
@@ -261,55 +262,55 @@ var share_social_details = {
     "abel-tasman-coast-track":
         {
         "social_text": "I'm going on a Great Walk in New Zealand, the ABEL TASMEN COAST TRACK",
-        "facebook_url": "http://www.greatwalks.co.nz/abel-tasman-coast-track",
+        "facebook_url": "https://www.facebook.com/GreatWalks",
         "twitter_url": "http://bit.ly/PBKyah"
         },
     "heaphy-track":
         {
         "social_text": "I'm going on a Great Walk in New Zealand, the HEAPHY TRACK",
-        "facebook_url": "http://www.greatwalks.co.nz/heaphy-track",
+        "facebook_url": "https://www.facebook.com/GreatWalks",
         "twitter_url": "http://bit.ly/REibYQ"
         },
     "kepler-track":
         {
         "social_text": "I'm going on a Great Walk in New Zealand, the KEPLER TRACK",
-        "facebook_url": "http://www.greatwalks.co.nz/kepler-track",
+        "facebook_url": "https://www.facebook.com/GreatWalks",
         "twitter_url": "http://bit.ly/VRNca2"
         },
     "lake-waikaremoana":
         {
         "social_text": "I'm going on a Great Walk in New Zealand, the WAIKAREMOANA TRACK",
-        "facebook_url": "http://www.greatwalks.co.nz/lake-waikaremoana",
+        "facebook_url": "https://www.facebook.com/GreatWalks",
         "twitter_url": "http://bit.ly/PBKBTA"
         },
     "milford-track":
         {
         "social_text": "I'm going on a Great Walk in New Zealand, the MILFORD TRACK",
-        "facebook_url": "http://www.greatwalks.co.nz/milford-track",
+        "facebook_url": "https://www.facebook.com/GreatWalks",
         "twitter_url": "http://bit.ly/SYbOOu"
         },
     "rakiura-track---stewart-island":
         {
         "social_text": "I'm going on a Great Walk in New Zealand, the RAKIURA TRACK ON STEWART ISLAND",
-        "facebook_url": "http://www.greatwalks.co.nz/rakiura-track",
+        "facebook_url": "https://www.facebook.com/GreatWalks",
         "twitter_url": "http://bit.ly/XhJHyJ"
         },
     "routeburn-track":
         {
         "social_text": "I'm going on a Great Walk in New Zealand, the ROUTEBURN TRACK",
-        "facebook_url": "http://www.greatwalks.co.nz/routeburn-track",
+        "facebook_url": "https://www.facebook.com/GreatWalks",
         "twitter_url": "http://bit.ly/UhPxQ8"
         },
     "tongariro-northern-circuit":
         {
         "social_text": "I'm going on a Great Walk in New Zealand, the TONGARIRO NORTHERN CIRCUIT",
-        "facebook_url": "http://www.greatwalks.co.nz/tongariro-northern-circuit",
+        "facebook_url": "https://www.facebook.com/GreatWalks",
         "twitter_url": "http://bit.ly/YUBHSI"
         },
     "whanganui-journey":
         {
         "social_text": "I'm going on a Great Walk in New Zealand, the WHANGANUI JOURNEY",
-        "facebook_url": "http://www.greatwalks.co.nz/whanganui-journey",
+        "facebook_url": "https://www.facebook.com/GreatWalks",
         "twitter_url": "http://bit.ly/Rf9sL6"
         }
 };
@@ -465,7 +466,7 @@ process.stdout.write("Generating HTML\n");
         if(!fs.statSync(walk_fullpath).isDirectory() && walk_name.endsWith(".csv")){
             process.stdout.write(" - Found a CSV: " + walk_name + "\n");
             was_able_to_read_a_line = false;
-            locations_data = fs.readFileSync(walk_fullpath, 'utf8').toString().CSVMap();
+            locations_data = fs.readFileSync(walk_fullpath).toString().CSVMap();
             //throw JSON.stringify(locations_data); //DEBUG
 
             for(var y = 0; y < locations_data.length; y++){
@@ -484,6 +485,9 @@ process.stdout.write("Generating HTML\n");
                     row.GreatWalkId = location_id_mapping[row.GreatWalk];
                     if(row.GreatWalkId === undefined) {
                         throw "Unable to find GreatWalkId for " + row.GreatWalk;
+                    }
+                    if(row.Description.toLowerCase() === "yes") {
+                        row.Description = "";
                     }
                     walk_csv_path = path.join(approot, "walks", row.GreatWalkId, "locations.csv");
                     if(row.POIIconType) {
@@ -798,6 +802,7 @@ function process_page(htmlf_path, page_title, page_mustache_data, page_id){
                         .replace(/&Uuml;/g, "\u016A")  //macronised U
                         .replace(/&uuml;/g, "\u016B") //macronised u
                         .replace(/Maori/gi, function(match, offset, the_string){
+                            //may be too broad, may cause problems if the word Maori is in a URL or something
                             var maori_length = "Maori".length,
                                 less_than_offset = the_string.lastIndexOf("<", offset + maori_length - 1),
                                 greater_than_offset = the_string.lastIndexOf(">", offset + maori_length - 1),
@@ -813,16 +818,16 @@ function process_page(htmlf_path, page_title, page_mustache_data, page_id){
                             } else {
                                 return match;
                             }
-                        }) //may be too broad, may cause problems if the word Maori is in a URL or something
-                        .replace(/([0-9.]+) km/gi, function(match, contents, offset, s){
-                            return format_kilometres(parseFloat(contents));
-                        })
-                        .replace(/([0-9.]+) metres/gi, function(match, contents, offset, s){
-                            return format_metres(parseFloat(contents));
-                        })
-                        .replace(/([0-9.]+) kg/gi, function(match, contents, offset, s){
-                            return format_kilograms(parseFloat(contents));
                         });
+                        //.replace(/([0-9.]+) km/gi, function(match, contents, offset, s){
+                        //    return format_kilometres(parseFloat(contents));
+                        //})
+                        //.replace(/([0-9.]+) metres/gi, function(match, contents, offset, s){
+                        //    return format_metres(parseFloat(contents));
+                        //})
+                        //.replace(/([0-9.]+) kg/gi, function(match, contents, offset, s){
+                        //    return format_kilograms(parseFloat(contents));
+                        //});
     }
     return html_page;
 }

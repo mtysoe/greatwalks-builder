@@ -13,3 +13,4 @@ pids
 logs
 results
 
+*.config

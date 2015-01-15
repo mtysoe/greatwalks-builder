@@ -21,7 +21,7 @@
             if(!this_href || this_href.substr(0, 1) === "#" || this_href.substr(0, 4) === "tel:") {
                 return true;
             } else if(this_href.indexOf(":") !== -1){
-                var ref = window.open(this_href, '_blank');
+                window.open(this_href, '_blank');
                 return true;
             }
 
@@ -30,7 +30,10 @@
             }
 
             window.hide_all_popovers();
-            
+            load_page(this_href);
+            return false;
+        },
+        load_page = function(this_href){
             $.get(this_href, function(new_page, textStatus, jqXHR){
                 var title = new_page.replace(/^[\s\S]*<title(.*?)>|<\/title>[\s\S]*$/g, ''),
                     $new_page,
@@ -56,7 +59,6 @@
                         this_href;
                 }
             });
-            return false;
         },
         fast_press_init = function(event){
             var listen_on = modernizr_touch ? "touchstart" : "click";
@@ -67,6 +69,16 @@
             $page_contents_wrapper_page1 = $("#page1");
             $page_contents_wrapper_page2 = $("#page2");
             $body.on(listen_on, "a", fastPress_hyperlink);
+            watch_location();
+        },
+        previous_location,
+        watch_location = function(){
+            var current_location = window.location.toString();
+            if(previous_location && current_location !== previous_location){
+                load_page(window.location.pathname);
+            }
+            previous_location = current_location;
+            setTimeout(watch_location, 250);
         };
     $.prototype.fastPress = function(callback){
         if(callback === undefined) {

@@ -3,12 +3,12 @@
     <ul class="banners">
       <li>
         <a class="offer-link" href=
-        "http://bookings.bookitsecure.com/pub/supplier.aspx?b=DEPART"><img src="img/doc-banner1.png" alt="Offers from
+        "https://booking.doc.govt.nz/"><img src="img/doc-banner1.png" alt="Offers from
         DOC"></a>
       </li>
       <li>
         <a class="offer-link" href=
-        "http://www.airnewzealand.co.nz/special-deals-new-zealand#special-deals-great-walks"><img src="img/airnz-banner1.png" alt="Air New Zealand Great Walks Special Deals"></a>
+        "http://www.airnewzealand.co.nz/greatwalks"><img src="img/airnz-banner1.png" alt="Air New Zealand Great Walks Special Deals"></a>
       </li>
     </ul>
 </div>
